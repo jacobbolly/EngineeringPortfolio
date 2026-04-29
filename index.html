@@ -4,56 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joseph J. Bollinger | Biomedical Engineering Portfolio</title>
-
-  <!-- Link external CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header>
-    <div class="container">
-      <nav>
-        <div class="logo">Joseph J. Bollinger</div>
-        <div class="nav-links">
-          <a href="#Home">Home</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
+    <nav class="container">
+      <div class="logo">Joseph J. Bollinger</div>
 
-            <div class="hamburger" onclick="toggleMenu()">
-    ☰
-  </div>
-</nav>
-        </div>
-      </nav>
-    </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Biomedical Engineering • Embedded Systems • Medical Device R&D</div>
+        <div class="hero-text">
+          <p class="eyebrow">Biomedical Engineering • Embedded Systems • Medical Device R&D</p>
           <h1>Building practical medical technology with sensors, software, and product-focused engineering.</h1>
-          <p>
-            I am a biomedical engineer focused on embedded systems, wearable devices, and medical device R&D.
+          <p class="hero-subtitle">
+            Biomedical engineer focused on wearable sensors, motion tracking, prototyping,
+            and data-driven validation for medical device R&D.
           </p>
+
           <div class="button-row">
             <a class="btn btn-primary" href="#projects">View Projects</a>
             <a class="btn btn-secondary" href="resume.pdf" target="_blank">Download Resume</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/jacob-bolly/" target="_blank">LinkedIn</a>
           </div>
         </div>
 
-        <aside class="profile-card">
+        <div class="hero-card">
           <h2>Technical Focus</h2>
-          <ul class="skill-list">
-            <li>Embedded Systems</li>
-            <li>Medical Devices</li>
-            <li>IMU Sensors</li>
-            <li>Python</li>
-            <li>SolidWorks</li>
-          </ul>
-        </aside>
+          <div class="skill-list">
+            <span>Embedded Systems</span>
+            <span>Medical Devices</span>
+            <span>IMU Sensors</span>
+            <span>ESP32</span>
+            <span>Python</span>
+            <span>SolidWorks</span>
+            <span>3D Printing</span>
+            <span>Six Sigma</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -61,18 +65,120 @@
       <div class="container">
         <div class="section-title">
           <h2>Featured Project</h2>
+          <p>Projects focused on design, prototyping, testing, data collection, and iteration.</p>
         </div>
 
         <div class="featured-project">
-          <div class="project-visual">
-            <img src="assets/project1.png" alt="Rehab Tracker" />
+          <div class="project-image">
+            <img src="assets/project1.jpg" alt="Wearable rehabilitation motion tracker prototype" />
           </div>
 
           <div class="card">
             <h3>Wearable Rehabilitation Motion Tracker</h3>
             <p>
-              ESP32 + IMU wearable that tracks joint angle, counts reps, and detects bad form.
+              A compact ESP32 and BNO055 IMU-based wearable designed to track joint angle during
+              rehabilitation exercises. The system is being developed to count reps, measure range
+              of motion, and detect bad form.
             </p>
+
+            <p>
+              <strong>Hypothesis:</strong> A compact IMU-based wearable can measure joint angle
+              within ±10° of a reference measurement after calibration and filtering.
+            </p>
+
+            <div class="tag-row">
+              <span>ESP32C3</span>
+              <span>BNO055 IMU</span>
+              <span>Bluetooth</span>
+              <span>Python</span>
+              <span>3D Printing</span>
+              <span>Rep Counting</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <div class="card">
+            <h3>Medical Device Safety Shutoff System</h3>
+            <p>
+              Concept project expanding an accelerometer-based emergency shutoff into a more robust
+              embedded safety system.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Closed-Loop Control Simulator</h3>
+            <p>
+              Future project focused on feedback control, sensor input, and actuator response for
+              medical-device-style systems.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Biomedical Signal Processing Dashboard</h3>
+            <p>
+              Python-based dashboard for filtering, visualizing, and interpreting sensor or
+              physiological data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-title">
+          <h2>Experience & Education</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Biomedical Engineer - Support Specialist | Brainlab Inc.</h3>
+            <p>
+              Experience with medical technology, device integration, clinical workflows,
+              troubleshooting, documentation, and cross-functional collaboration.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>M.S. Engineering Technology and Management | Louisiana Tech University</h3>
+            <p>
+              Graduate work focused on engineering leadership, technology management,
+              process improvement, and applied engineering systems.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>B.S. Biomedical Engineering | Louisiana Tech University</h3>
+            <p>
+              Biomedical engineering degree with mechanical engineering concentration,
+              including CAD, prototyping, circuitry, programming, and device development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-title">
+          <h2>Skills</h2>
+        </div>
+
+        <div class="project-grid">
+          <div class="card">
+            <h3>Hardware & Prototyping</h3>
+            <p>ESP32, Arduino, IMU sensors, soldering, 3D printing, circuit prototyping, wearable enclosure design.</p>
+          </div>
+
+          <div class="card">
+            <h3>Software & Data</h3>
+            <p>Python, MATLAB, sensor data logging, filtering, visualization, and machine learning fundamentals.</p>
+          </div>
+
+          <div class="card">
+            <h3>Design & Quality</h3>
+            <p>SolidWorks, CAD modeling, engineering documentation, root cause analysis, Six Sigma, and medical device workflows.</p>
           </div>
         </div>
       </div>
@@ -83,23 +189,32 @@
         <div class="section-title">
           <h2>Contact</h2>
         </div>
-        <div class="card">
-          <p>Email: josephjbollinger@email.com</p>
+
+        <div class="card contact-card">
+          <p><strong>Email:</strong> <a href="mailto:josephjbollinger@gmail.com">josephjbollinger@gmail.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jacob-bolly/" target="_blank">linkedin.com/in/jacob-bolly</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/YOUR-USERNAME" target="_blank">github.com/YOUR-USERNAME</a></p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <p>© 2026 Joseph J. Bollinger</p>
-    </div>
+    <p>© 2026 Joseph J. Bollinger. Built with HTML and CSS.</p>
   </footer>
+
   <script>
-  function toggleMenu() {
-    const menu = document.getElementById("navLinks");
-    menu.classList.toggle("active");
-  }
-</script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    const links = document.querySelectorAll("#navLinks a");
+
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+      });
+    });
+  </script>
 </body>
 </html>

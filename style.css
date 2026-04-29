@@ -5,7 +5,7 @@
 }
 
 header{
-    background-color: floralwhite;
+    background-color: rgba(130, 185, 240, 0.98);
 }
 
 li{
@@ -13,7 +13,7 @@ li{
 }
 
 a{
-    color: black;
+    color: #211d1d;
     text-decoration: none;
 }
 
@@ -41,7 +41,7 @@ a{
 }
 
 .nav-link:hover{
-    color: aqua;
+    color: #000000;
 }
 
 .hamburger{

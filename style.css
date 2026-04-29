@@ -5,7 +5,7 @@
 }
 
 header{
-    background-color: rgb(43, 63, 140);
+    background-color: rgb(94, 106, 154);
 }
 
 li{
@@ -13,7 +13,7 @@ li{
 }
 
 a{
-    color: rgba(0, 0, 0, 0.55);
+    color: rgb(69, 69, 69);
     text-decoration: none;
 }
 
@@ -41,7 +41,7 @@ a{
 }
 
 .nav-link:hover{
-    color: #000000;
+    color: hsl(0, 0%, 0%);
 }
 
 .hamburger{
@@ -80,7 +80,7 @@ a{
         top 70px;
         gap: 0;
         flex-direction: column;
-        background-color: rgb(43, 63, 140);
+        background-color: rgb(94, 106, 154);
         width: 100%;
         text-align: center;
         transition: 0.3s;

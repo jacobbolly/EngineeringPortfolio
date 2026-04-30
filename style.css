@@ -1,331 +1,96 @@
-:root {
-    --Primary: #172326;
-    --Secondary: #1E293B;
-    --Accent: #caa11c;
-    --TextPrimary: #F8FAFC;
-    --TextSecondary: #94A3B8;
-}
-
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+header{
+    background-color: rgb(94, 106, 154);
 }
 
-body {
-    background-color: var(--Primary);
-    color: var(--TextPrimary);
-    font-family: 'Manrope', sans-serif;
-}
-
-/* HEADER */
-header {
-    background-color: var(--Primary);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-li {
+li{
     list-style: none;
 }
 
-a {
-    color: var(--TextPrimary);
+a{
+    color: rgb(69, 69, 69);
     text-decoration: none;
 }
 
-/* NAVBAR */
-
-.navbar {
+.navbar{
     min-height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 24px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.nav-menu {
+.nav-menu{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 60px;
 }
 
-.nav-branding {
+.nav-branding{
     font-size: 2rem;
-    font-weight: 800;
 }
 
-.nav-link {
-    transition: 0.3s ease;
-    font-weight: 600;
+.nav-link{
+    transition: 0.7s ease-in-out;
 }
 
-.nav-link:hover {
-    color: var(--Accent);
+.nav-link:hover{
+    color: hsl(0, 0%, 0%);
 }
 
-.hamburger {
+.hamburger{
     display: none;
     cursor: pointer;
 }
 
-.bar {
+.bar{
+    display: block;
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: var(--TextPrimary);
-    display: block;
-    transition: 0.3s;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(69, 69, 69);
 }
 
-/* HERO */
-
-.hero {
-    min-height: calc(100vh - 70px);
-    padding: 70px 24px 60px;
-    background: linear-gradient(135deg, var(--Primary), #0f1719);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-content {
-    text-align: center;
-    max-width: 850px;
-    margin-bottom: 28px;
-}
-
-.eyebrow {
-    color: var(--Accent);
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-.hero h1 {
-    font-size: clamp(2.8rem, 5vw, 5rem);
-    margin-bottom: 10px;
-}
-
-.hero-subtitle {
-    color: var(--TextSecondary);
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-.click-note {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-/* CAROUSEL (FIXED + FULL WIDTH LOOK) */
-
-.project-carousel {
-    width: 100%;
-    max-width: 1050px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 52px 1fr 52px;
-    align-items: center;
-    gap: 22px;
-}
-
-.project-slider {
-    width: 100%;
-    overflow: hidden !important;
-    border-radius: 22px;
-}
-
-.slide-track {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    transition: transform 0.6s ease;
-}
-
-.project-card {
-    flex: 0 0 100% !important;
-    min-width: 100% !important;
-    max-width: 100% !important;
-    height: 460px;
-    border-radius: 24px;
-    overflow: hidden;
-    background-color: var(--Secondary);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
-    position: relative;
-}
-
-.project-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* overlay */
-.project-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.85),
-        rgba(0,0,0,0.15)
-    );
-}
-
-.project-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 24px;
-    z-index: 2;
-}
-
-.project-overlay h3 {
-    font-size: 1.5rem;
-}
-
-.project-overlay p {
-    color: var(--Accent);
-    font-size: 1rem;
-}
-
-/* BUTTONS */
-
-.carousel-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: var(--Secondary);
-    border: 1px solid rgba(255,255,255,0.12);
-    color: var(--TextPrimary);
-    font-size: 1.4rem;
-    cursor: pointer;
-    transition: 0.25s ease;
-}
-
-.carousel-btn:hover {
-    background-color: var(--Accent);
-    color: var(--Primary);
-}
-
-/* DOTS */
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 22px;
-}
-
-.carousel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: none;
-    background-color: var(--TextSecondary);
-    opacity: 0.4;
-    cursor: pointer;
-}
-
-.carousel-dot.active {
-    background-color: var(--Accent);
-    opacity: 1;
-    transform: scale(1.3);
-}
-
-/* SECTIONS */
-
-.section {
-    padding: 90px 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-}
-
-.section p {
-    color: var(--TextSecondary);
-    line-height: 1.7;
-}
-
-/* MOBILE */
-
-@media(max-width: 768px) {
-
-    .hamburger {
+@media(max-width:768px){
+    .hamburger{
         display: block;
     }
-
     .hamburger.active .bar:nth-child(2){
-        opacity:0;
+        opacity: 0;
     }
-
     .hamburger.active .bar:nth-child(1){
-        transform:translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
     }
-
     .hamburger.active .bar:nth-child(3){
-        transform:translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
     }
-
-    .nav-menu {
-        position: fixed;
+    
+    
+    .nav-menu{
+        position:fixed;
         left: -100%;
-        top: 70px;
+        top 70px;
+        gap: 0;
         flex-direction: column;
-        background-color: var(--Primary);
+        background-color: rgb(94, 106, 154);
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        padding: 28px 0;
-        gap: 18px;
     }
-
-    .nav-menu.active {
+    
+    .nav-item{
+        margin: 16px 0;
+    }
+    
+    .nav-menu.active{
         left: 0;
-    }
-
-    .nav-item {
-        margin: 6px 0;
-    }
-
-    .nav-link {
-        font-size: 1.1rem;
-    }
-
-    .hero {
-        padding: 70px 18px;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .project-carousel {
-        max-width: 95%;
-        grid-template-columns: 38px 1fr 38px;
-        gap: 8px;
-    }
-
-    .project-card {
-        height: 240px;
-    }
-
-    .carousel-btn {
-        width: 34px;
-        height: 34px;
-        font-size: 1rem;
     }
 }

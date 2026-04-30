@@ -108,7 +108,7 @@ a {
 
 .hero {
     min-height: calc(100vh - 70px);
-    padding: 70px 24px 60px;
+    padding: 1in 24px 60px;
     background: linear-gradient(135deg, #f4f6f3, #e8eeeb);
     color: var(--Primary);
     display: flex;
@@ -145,6 +145,23 @@ a {
 .click-note {
     font-size: 0.9rem;
     opacity: 0.8;
+}
+
+.home-mission {
+    max-width: 900px;
+    color: #304247;
+    font-size: clamp(1.45rem, 2.2vw, 2.15rem);
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0 auto;
+}
+
+.carousel-heading {
+    color: var(--Primary);
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 28px;
+    text-align: center;
 }
 
 /* CAROUSEL */
@@ -430,7 +447,7 @@ a {
     }
 
     .hero {
-        padding: 70px 18px;
+        padding: 1in 18px 70px;
     }
 
     .hero h1 {

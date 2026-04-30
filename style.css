@@ -18,6 +18,10 @@ header{
     background-color: var(--Primary);
 }
 
+h1 {
+    
+}
+
 li{
     list-style: none;
 }
@@ -95,7 +99,7 @@ a{
         text-align: center;
         transition: 0.3s;
         
-        padding-top: 30px;
+        padding-top: 15px;
         padding-bottom: 30px;
     }
     

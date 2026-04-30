@@ -287,6 +287,8 @@ a {
 
 #contact {
     max-width: none;
+    padding-top: 42px;
+    padding-bottom: 42px;
     background-color: var(--Primary);
     color: var(--TextPrimary);
 }

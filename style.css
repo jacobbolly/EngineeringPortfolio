@@ -1,3 +1,12 @@
+:root {
+    --Primary: #172326;
+    --Secondary: #1E293B;
+    --Accent: #caa11c;
+    --TextPrimary: #F8FAFC;
+    --TextSecondary: #94A3B8;
+}
+
+
 *{
     padding: 0;
     margin: 0;
@@ -5,7 +14,7 @@
 }
 
 header{
-    background-color: rgb(94, 106, 154);
+    background-color: var(--Primary);
 }
 
 li{
@@ -13,7 +22,7 @@ li{
 }
 
 a{
-    color: rgb(69, 69, 69);
+    color: var(--TextPrimary);
     text-decoration: none;
 }
 
@@ -41,7 +50,7 @@ a{
 }
 
 .nav-link:hover{
-    color: hsl(0, 0%, 0%);
+    color: var(--TextSecondary);
 }
 
 .hamburger{
@@ -56,7 +65,7 @@ a{
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: rgb(69, 69, 69);
+    background-color: var(--TextPrimary);
 }
 
 @media(max-width:768px){
@@ -80,7 +89,7 @@ a{
         top 70px;
         gap: 0;
         flex-direction: column;
-        background-color: rgb(94, 106, 154);
+        background-color: var(--Secondary);
         width: 100%;
         text-align: center;
         transition: 0.3s;

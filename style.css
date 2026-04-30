@@ -227,7 +227,7 @@ a {
     height: 48px;
     border-radius: 50%;
     background-color: #f4f6f3;
-    border: 1px solid #f4f6f3;
+    border: 0;
     color: var(--Primary);
     font-size: 1.4rem;
     cursor: pointer;
@@ -235,6 +235,7 @@ a {
     position: relative;
     z-index: 50;
     pointer-events: auto;
+    box-shadow: none;
 }
 
 .carousel-btn:hover {

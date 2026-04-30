@@ -309,10 +309,27 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    align-items: center;
+    gap: 10px;
+    color: var(--TextPrimary);
+    font-size: 1.32rem;
+    font-weight: 800;
+    line-height: 1.4;
 }
 
-.featured-skills span,
+.featured-skills span {
+    color: var(--TextPrimary);
+}
+
+.featured-skills span:not(:last-child)::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: 300;
+    color: var(--TextPrimary);
+    vertical-align: middle;
+}
+
 .about-tags span {
     border: 1px solid var(--Border);
     border-radius: 6px;

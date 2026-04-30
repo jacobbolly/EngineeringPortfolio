@@ -227,7 +227,7 @@ a {
     height: 48px;
     border-radius: 50%;
     background-color: #f4f6f3;
-    border: 1px solid rgba(23, 35, 38, 0.12);
+    border: 1px solid #f4f6f3;
     color: var(--Primary);
     font-size: 1.4rem;
     cursor: pointer;
@@ -300,16 +300,16 @@ a {
 }
 
 #contact p {
-    color: var(--TextPrimary);
+    color: var(--TextSecondary);
 }
 
 #contact a {
-    color: var(--Accent);
+    color: var(--TextPrimary);
     font-weight: 700;
 }
 
 #contact a:hover {
-    color: var(--TextSecondary);
+    color: var(--Accent);
 }
 
 /* MOBILE */

@@ -151,7 +151,7 @@ a {
 
 .project-carousel {
     width: 100%;
-    max-width: 1050px;
+    max-width: 1180px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 52px 1fr 52px;
@@ -375,7 +375,7 @@ a {
     }
 
     .project-carousel {
-        max-width: 95%;
+        max-width: 98%;
         grid-template-columns: 38px 1fr 38px;
         gap: 8px;
     }

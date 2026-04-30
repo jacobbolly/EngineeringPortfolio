@@ -490,7 +490,7 @@ a {
 
     .nav-menu {
         position: fixed;
-        left: -100%;
+        right: -100%;
         top: 70px;
         flex-direction: column;
         background-color: var(--Primary);
@@ -502,7 +502,7 @@ a {
     }
 
     .nav-menu.active {
-        left: 0;
+        right: 0;
     }
 
     .nav-item {

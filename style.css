@@ -223,6 +223,17 @@ header {
     text-transform: uppercase;
 }
 
+.carousel-heading::before,
+.carousel-heading::after {
+    content: "";
+    display: inline-block;
+    width: 72px;
+    height: 1px;
+    margin: 0 18px;
+    background-color: rgba(23, 35, 38, 0.28);
+    vertical-align: middle;
+}
+
 .project-carousel {
     max-width: 1180px;
     margin: 0 auto;

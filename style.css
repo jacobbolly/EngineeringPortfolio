@@ -125,13 +125,13 @@ a {
 
 .about-portrait {
     display: block;
-    width: min(280px, 70vw);
+    width: min(150px, 42vw);
     aspect-ratio: 4 / 5;
     object-fit: cover;
     object-position: center top;
     border-radius: 8px;
-    box-shadow: 0 18px 40px rgba(23, 35, 38, 0.18);
-    margin: 0 auto 28px;
+    box-shadow: 0 12px 28px rgba(23, 35, 38, 0.16);
+    margin: 0 auto 18px;
 }
 
 .eyebrow {

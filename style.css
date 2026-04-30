@@ -354,7 +354,7 @@ a {
     gap: 10px;
     margin-top: 22px;
     color: var(--Primary);
-    font-size: 1.12rem;
+    font-size: 1.32rem;
     font-weight: 800;
     line-height: 1.4;
 }
@@ -364,13 +364,10 @@ a {
 }
 
 .featured-skills span:not(:last-child)::after {
-    content: "";
+    content: "|";
     display: inline-block;
-    width: 4px;
-    height: 4px;
     margin-left: 10px;
-    border-radius: 50%;
-    background-color: var(--Primary);
+    font-weight: 300;
     vertical-align: middle;
 }
 

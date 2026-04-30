@@ -571,7 +571,8 @@ header {
 .contact-logo {
     position: absolute;
     right: 1in;
-    bottom: 26px;
+    top: 50%;
+    transform: translateY(-50%);
     color: var(--TextPrimary);
     font-size: 4.6rem;
     font-weight: 300;
@@ -670,6 +671,7 @@ header {
 
     .contact-logo {
         position: static;
+        transform: none;
         width: max-content;
         margin: 24px 0 0 auto;
         font-size: 3.5rem;

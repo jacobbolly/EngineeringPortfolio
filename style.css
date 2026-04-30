@@ -67,21 +67,9 @@ header {
 
 .nav-title {
     color: var(--Accent);
-    font-size: 1.25rem;
+    font-size: 2rem;
     font-weight: 800;
-    line-height: 1;
-}
-
-.nav-title::before {
-    content: "JB";
-}
-
-.nav-title {
-    font-size: 0;
-}
-
-.nav-title::before {
-    font-size: 1.4rem;
+    line-height: 1.1;
 }
 
 .nav-subheading {

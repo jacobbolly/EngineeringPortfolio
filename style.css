@@ -300,7 +300,7 @@ a {
 }
 
 #contact p {
-    color: var(--TextSecondary);
+    color: var(--TextPrimary);
 }
 
 #contact a {
@@ -309,7 +309,7 @@ a {
 }
 
 #contact a:hover {
-    color: var(--TextPrimary);
+    color: var(--TextSecondary);
 }
 
 /* MOBILE */

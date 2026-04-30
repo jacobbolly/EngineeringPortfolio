@@ -17,8 +17,8 @@ html {
 }
 
 body {
-    background-color: var(--Primary);
-    color: var(--TextPrimary);
+    background-color: #f4f6f3;
+    color: var(--Primary);
     font-family: 'Manrope', sans-serif;
 }
 
@@ -109,7 +109,8 @@ a {
 .hero {
     min-height: calc(100vh - 70px);
     padding: 70px 24px 60px;
-    background: linear-gradient(135deg, var(--Primary), #0f1719);
+    background: linear-gradient(135deg, #f4f6f3, #e8eeeb);
+    color: var(--Primary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -280,7 +281,7 @@ a {
 }
 
 .section p {
-    color: var(--TextSecondary);
+    color: #52656b;
     line-height: 1.7;
 }
 

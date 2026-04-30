@@ -301,6 +301,15 @@ a {
     color: var(--TextSecondary);
 }
 
+#contact a {
+    color: var(--Accent);
+    font-weight: 700;
+}
+
+#contact a:hover {
+    color: var(--TextPrimary);
+}
+
 /* MOBILE */
 
 @media(max-width: 768px) {

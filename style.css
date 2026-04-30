@@ -42,7 +42,7 @@ a {
 /* NAVBAR */
 
 .navbar {
-    min-height: 70px;
+    min-height: 82px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,8 +58,24 @@ a {
 }
 
 .nav-branding {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.nav-title {
     font-size: 2rem;
     font-weight: 800;
+    line-height: 1.1;
+}
+
+.nav-subheading {
+    color: var(--Accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.25;
+    text-transform: uppercase;
 }
 
 .nav-link {
@@ -311,6 +327,15 @@ a {
 
     .nav-link {
         font-size: 1.1rem;
+    }
+
+    .nav-title {
+        font-size: 1.55rem;
+    }
+
+    .nav-subheading {
+        font-size: 0.63rem;
+        max-width: 240px;
     }
 
     .hero {

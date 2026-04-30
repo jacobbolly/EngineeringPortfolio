@@ -470,6 +470,82 @@ header {
     border-radius: 8px;
 }
 
+.experience-summary {
+    color: var(--TextSecondary);
+    font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+    font-weight: 600;
+    line-height: 1.55;
+    max-width: 840px;
+}
+
+.experience-section {
+    padding-top: 56px;
+}
+
+.experience-section-tight {
+    padding-top: 0;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    gap: 24px;
+}
+
+.experience-grid.three-column {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.experience-card,
+.skills-panel {
+    background-color: var(--Panel);
+    border: 1px solid var(--Border);
+    border-radius: 8px;
+    box-shadow: 0 16px 42px rgba(23, 35, 38, 0.08);
+    padding: 28px;
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 28px;
+}
+
+.experience-date {
+    color: var(--Accent);
+    font-size: 0.86rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.experience-card h2,
+.experience-card h3 {
+    color: var(--TextPrimary);
+    margin-bottom: 8px;
+}
+
+.experience-card h3:not(:first-of-type) {
+    margin-top: 22px;
+}
+
+.experience-org {
+    color: var(--Muted);
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.experience-card ul {
+    color: var(--TextSecondary);
+    line-height: 1.65;
+    padding-left: 20px;
+}
+
+.experience-card li {
+    list-style: disc;
+    margin-bottom: 8px;
+}
+
 #contact {
     max-width: none;
     background-color: #ffffff;
@@ -568,7 +644,10 @@ header {
     .about-intro,
     .about-layout,
     .about-values,
-    .project-detail {
+    .project-detail,
+    .experience-grid,
+    .experience-grid.three-column,
+    .experience-item {
         grid-template-columns: 1fr;
     }
 

@@ -21,11 +21,11 @@
         <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
       </ul>
 
-      <div class="hamburger">
+      <button type="button" class="hamburger" aria-label="Open navigation menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
-      </div>
+      </button>
     </nav>
   </header>
 
@@ -34,10 +34,16 @@
       <div class="hero-content">
         <p class="eyebrow">Engineering Portfolio</p>
         <h1>Engineering Projects</h1>
+
+        <p class="home-about">
+          I am an engineering student interested in wearable technology, embedded systems,
+          prototyping, and human-centered design. This portfolio highlights projects where
+          I apply technical problem-solving to real-world engineering challenges.
+        </p>
       </div>
 
       <div class="project-carousel">
-        <button class="carousel-btn prev-btn" aria-label="Previous project">&#10094;</button>
+        <button type="button" class="carousel-btn prev-btn" aria-label="Previous project">&#10094;</button>
 
         <div class="project-slider">
           <div class="slide-track">
@@ -77,10 +83,27 @@
           </div>
         </div>
 
-        <button class="carousel-btn next-btn" aria-label="Next project">&#10095;</button>
+        <button type="button" class="carousel-btn next-btn" aria-label="Next project">&#10095;</button>
       </div>
 
       <div class="carousel-dots"></div>
+
+      <div class="featured-skills">
+        <span>CAD</span>
+        <span>3D Printing</span>
+        <span>Embedded Systems</span>
+        <span>Data Analysis</span>
+        <span>Prototyping</span>
+      </div>
+
+      <div class="home-cta">
+        <p>Interested in my work?</p>
+
+        <div class="cta-buttons">
+          <a href="https://www.linkedin.com/in/jacob-bolly/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/jacobbolly" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="contact">
@@ -91,6 +114,6 @@
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

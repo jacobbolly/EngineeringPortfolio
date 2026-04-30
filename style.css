@@ -87,6 +87,10 @@ a {
     color: var(--Accent);
 }
 
+.nav-link.active {
+    color: var(--Accent);
+}
+
 .hamburger {
     display: none;
     cursor: pointer;
@@ -145,6 +149,80 @@ a {
 .click-note {
     font-size: 0.9rem;
     opacity: 0.8;
+}
+
+.about-hero {
+    min-height: 460px;
+}
+
+.about-section {
+    padding-left: 1in;
+    padding-right: 1in;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+    gap: 48px;
+    align-items: start;
+}
+
+.about-copy h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.12;
+    margin-bottom: 20px;
+}
+
+.about-copy p {
+    color: #52656b;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    margin-bottom: 18px;
+}
+
+.about-card,
+.about-values article {
+    background-color: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(23, 35, 38, 0.12);
+    border-radius: 8px;
+    padding: 26px;
+}
+
+.about-card h3,
+.about-values h3 {
+    color: var(--Primary);
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+}
+
+.about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.about-tags span {
+    border: 1px solid rgba(23, 35, 38, 0.14);
+    border-radius: 999px;
+    color: var(--Primary);
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 8px 12px;
+}
+
+.about-section-alt {
+    padding-top: 0;
+}
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.about-values p {
+    color: #52656b;
+    line-height: 1.7;
 }
 
 /* CAROUSEL */
@@ -409,6 +487,16 @@ a {
 
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .about-section {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .about-layout,
+    .about-values {
+        grid-template-columns: 1fr;
     }
 
     .project-carousel {

@@ -1,94 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me | Marta Bollinger</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>About | Joseph J. Bollinger</title>
 </head>
+
 <body>
-  <header class="site-header site-header--solid">
-    <div class="container nav-wrap">
-      <a class="brand brand--dark" href="index.html">
-        <span class="brand-kicker">Marta Bollinger</span>
-        <span class="brand-title">AI in the AEC Industry Portfolio</span>
+  <header>
+    <nav class="navbar">
+      <a href="index.html#home" class="nav-branding">
+        <span class="nav-title">Joseph J. Bollinger</span>
+        <span class="nav-subheading">Biomedical Engineer &middot; Medical Device Design &middot; Learner</span>
       </a>
-      <nav class="main-nav main-nav--dark">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About Me</a>
-        <a href="news.html">AI News</a>
-        <a href="projects.html">Projects</a>
-      </nav>
-      <a class="nav-cta nav-cta--dark" href="projects.html">View My Work</a>
-    </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="experience.html" class="nav-link">Experience</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+        <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <button type="button" class="hamburger" aria-label="Open navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
   </header>
 
   <main>
-    <section class="page-hero page-hero--light">
-      <div class="container page-hero__inner">
-        <p class="eyebrow eyebrow-dark">About Me</p>
-        <h1>My interest in AI started with seeing how quickly the AEC industry is beginning to shift.</h1>
+    <section class="hero about-hero">
+      <div class="hero-content">
+        <p class="eyebrow">About Me</p>
+        <h1>Building practical medical technology with an engineer's mindset.</h1>
+        <p class="home-about">
+          I am an engineering student focused on biomedical engineering, medical device design,
+          and hands-on product development. I enjoy turning early ideas into testable prototypes,
+          especially when the work connects human needs with careful technical problem-solving.
+        </p>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container about-layout">
-        <div class="about-image"></div>
+    <section class="section about-section">
+      <div class="about-layout">
         <div class="about-copy">
-          <p class="section-label">Background</p>
-          <h2>Hi, I’m Marta Bollinger.</h2>
+          <p class="eyebrow">Background</p>
+          <h2>My work sits between engineering, prototyping, and patient-centered design.</h2>
           <p>
-            I have a degree in civil engineering and am currently pursuing a master’s in business administration and architectural engineering with a focus in construction management. Through my studies, I have become really interested in how the AEC industry is starting to shift with new innovations and technologies.
+            I am interested in wearable technology, embedded systems, 3D printing, CAD,
+            data analysis, and rehabilitation-focused devices. Across my projects, I look for
+            ways to make concepts measurable, useful, and easier to evaluate through iteration.
           </p>
           <p>
-            A lot of what I have learned has been on the more traditional side, so seeing how artificial intelligence is beginning to impact design, decision-making, and construction processes has been especially interesting to me. Understanding how projects come together and how systems can be improved, not just designed, is something I enjoy.
+            This portfolio highlights engineering projects where I apply technical skills to
+            real-world challenges, from building prototypes to thinking through how a user would
+            actually interact with a device.
           </p>
-          <p>
-            This portfolio highlights my work throughout the semester, including AI news, class assignments, and examples of how AI can be applied in the AEC industry, along with how my perspective on it has developed over the course.
-          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>Focus Areas</h3>
+          <div class="about-tags">
+            <span>Medical Device Design</span>
+            <span>Biomedical Engineering</span>
+            <span>Wearable Technology</span>
+            <span>Embedded Systems</span>
+            <span>CAD</span>
+            <span>3D Printing</span>
+            <span>Data Analysis</span>
+            <span>Human-Centered Design</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section muted-bg">
-      <div class="container">
-        <div class="section-heading section-heading--center">
-          <p class="section-label">What This Portfolio Reflects</p>
-          <h2>A mix of engineering thinking, industry curiosity, and practical application.</h2>
-        </div>
-        <div class="value-grid">
-          <article class="value-card">
-            <h3>Technical Foundation</h3>
-            <p>My civil engineering background gave me a strong appreciation for structure, systems, accuracy, and the realities of project work.</p>
-          </article>
-          <article class="value-card">
-            <h3>Industry Awareness</h3>
-            <p>Graduate study has helped me connect traditional AEC processes with newer conversations about AI, automation, and decision support.</p>
-          </article>
-          <article class="value-card">
-            <h3>Applied Learning</h3>
-            <p>This site is not just about ideas. It shows how AI tools can connect to actual design, estimating, and construction workflows.</p>
-          </article>
-        </div>
+    <section class="section about-section about-section-alt">
+      <div class="about-values">
+        <article>
+          <h3>Prototype First</h3>
+          <p>I like using quick builds, physical models, and testable systems to learn what works before over-polishing an idea.</p>
+        </article>
+        <article>
+          <h3>Measure Clearly</h3>
+          <p>Good engineering decisions come from useful data, repeatable testing, and honest evaluation of the result.</p>
+        </article>
+        <article>
+          <h3>Design For People</h3>
+          <p>Medical and rehabilitation technology should support the person using it, not just satisfy the technical requirements.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:josephjbollinger@example.com">josephjbollinger@example.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/jacob-bolly/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jacob-bolly/</a></p>
+      <p>GitHub: <a href="https://github.com/jacobbolly" target="_blank" rel="noopener noreferrer">github.com/jacobbolly</a></p>
+      <div class="contact-logo" aria-label="JB logo">
+        <span class="logo-j">J</span><span class="logo-b">B</span>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <div>
-        <p class="footer-title">Marta Bollinger</p>
-        <p>AI in the AEC Industry Portfolio</p>
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="news.html">News</a>
-        <a href="projects.html">Projects</a>
-      </div>
-    </div>
-  </footer>
+  <script src="script.js" defer></script>
 </body>
 </html>

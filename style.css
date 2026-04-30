@@ -245,7 +245,7 @@ header {
 .project-card {
     flex: 0 0 calc((100% - 36px) / 3);
     min-width: calc((100% - 36px) / 3);
-    height: 170px;
+    height: 240px;
     background-color: #eef2ef;
     border: 1px solid var(--Border);
     border-radius: 8px;

@@ -22,7 +22,6 @@ body {
     font-family: 'Manrope', sans-serif;
 }
 
-/* HEADER (STICKY) */
 header {
     background-color: var(--Primary);
     position: sticky;
@@ -100,7 +99,7 @@ a {
 .hero-content {
     text-align: center;
     max-width: 850px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .eyebrow {
@@ -112,51 +111,51 @@ a {
 }
 
 .hero h1 {
-    font-size: 3.3rem;
-    margin-bottom: 14px;
+    font-size: 3.2rem;
+    margin-bottom: 10px;
 }
 
 .hero-subtitle {
     color: var(--TextSecondary);
-    margin-bottom: 14px;
+    margin-bottom: 10px;
 }
 
 .click-note {
-    opacity: 0.85;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
-/* PROJECT SLIDER */
+/* CAROUSEL */
+
+.project-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
 
 .project-slider {
     width: 100%;
-    max-width: 950px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 10px 0;
-    scrollbar-width: none;
-}
-
-.project-slider::-webkit-scrollbar {
-    display: none;
+    overflow: hidden;
+    border-radius: 18px;
 }
 
 .slide-track {
     display: flex;
-    gap: 18px;
-    padding: 5px;
+    transition: transform 0.55s ease;
 }
 
 .project-card {
-    position: relative;
-    min-width: 260px;
-    max-width: 260px;
-    height: 155px;
-    border-radius: 14px;
+    min-width: 100%;
+    height: 260px;
+    border-radius: 18px;
     overflow: hidden;
     background-color: var(--Secondary);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+    position: relative;
     flex-shrink: 0;
 }
 
@@ -174,8 +173,8 @@ a {
     inset: 0;
     background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.75),
-        rgba(0, 0, 0, 0.1)
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.15)
     );
 }
 
@@ -183,23 +182,60 @@ a {
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 12px;
+    padding: 16px;
     z-index: 2;
 }
 
 .project-overlay h3 {
-    font-size: 1rem;
-    margin-bottom: 4px;
+    font-size: 1.2rem;
 }
 
 .project-overlay p {
     color: var(--Accent);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+.carousel-btn {
+    background-color: var(--Secondary);
+    color: var(--TextPrimary);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: 0.25s ease;
+    flex-shrink: 0;
+    z-index: 5;
+}
+
+.carousel-btn:hover {
+    background-color: var(--Accent);
+    color: var(--Primary);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 18px;
+}
+
+.carousel-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--TextSecondary);
+    opacity: 0.45;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.carousel-dot.active {
+    background-color: var(--Accent);
+    opacity: 1;
+    transform: scale(1.25);
 }
 
 /* SECTIONS */
@@ -220,10 +256,9 @@ a {
     line-height: 1.7;
 }
 
-/* MOBILE MENU (FIXED + COMPACT) */
+/* MOBILE */
 
 @media(max-width: 768px) {
-
     .hamburger {
         display: block;
     }
@@ -249,11 +284,14 @@ a {
         width: 100%;
         text-align: center;
         transition: 0.3s;
-
         padding: 28px 0;
         gap: 18px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    .nav-menu.active {
+        left: 0;
     }
 
     .nav-item {
@@ -265,17 +303,26 @@ a {
         font-weight: 700;
     }
 
-    .nav-menu.active {
-        left: 0;
+    .hero {
+        padding: 70px 18px;
     }
 
     .hero h1 {
         font-size: 2.3rem;
     }
 
+    .project-carousel {
+        max-width: 340px;
+        gap: 8px;
+    }
+
     .project-card {
-        min-width: 220px;
-        max-width: 220px;
-        height: 135px;
+        height: 200px;
+    }
+
+    .carousel-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
     }
 }

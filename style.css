@@ -17,8 +17,8 @@ html {
 }
 
 body {
-    background-color: var(--Primary);
-    color: var(--TextPrimary);
+    background-color: #f4f6f3;
+    color: var(--Primary);
     font-family: 'Manrope', sans-serif;
 }
 
@@ -42,13 +42,13 @@ a {
 /* NAVBAR */
 
 .navbar {
-    min-height: 70px;
+    min-height: 82px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 24px;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 0 1in;
+    max-width: none;
+    margin: 0;
 }
 
 .nav-menu {
@@ -58,8 +58,24 @@ a {
 }
 
 .nav-branding {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nav-title {
     font-size: 2rem;
     font-weight: 800;
+    line-height: 1.1;
+}
+
+.nav-subheading {
+    color: var(--Accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.25;
+    text-transform: uppercase;
 }
 
 .nav-link {
@@ -74,6 +90,9 @@ a {
 .hamburger {
     display: none;
     cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
 }
 
 .bar {
@@ -90,7 +109,8 @@ a {
 .hero {
     min-height: calc(100vh - 70px);
     padding: 70px 24px 60px;
-    background: linear-gradient(135deg, var(--Primary), #0f1719);
+    background: linear-gradient(135deg, #f4f6f3, #e8eeeb);
+    color: var(--Primary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,11 +147,11 @@ a {
     opacity: 0.8;
 }
 
-/* CAROUSEL (FIXED + FULL WIDTH LOOK) */
+/* CAROUSEL */
 
 .project-carousel {
     width: 100%;
-    max-width: 1050px;
+    max-width: 1180px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 52px 1fr 52px;
@@ -143,6 +163,8 @@ a {
     width: 100%;
     overflow: hidden !important;
     border-radius: 22px;
+    position: relative;
+    z-index: 1;
 }
 
 .slide-track {
@@ -161,6 +183,7 @@ a {
     background-color: var(--Secondary);
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
     position: relative;
+    z-index: 1;
 }
 
 .project-card img {
@@ -169,15 +192,14 @@ a {
     object-fit: cover;
 }
 
-/* overlay */
 .project-card::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
         to top,
-        rgba(0,0,0,0.85),
-        rgba(0,0,0,0.15)
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.15)
     );
 }
 
@@ -204,16 +226,20 @@ a {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: var(--Secondary);
-    border: 1px solid rgba(255,255,255,0.12);
-    color: var(--TextPrimary);
+    background-color: transparent;
+    border: 0;
+    color: var(--Primary);
     font-size: 1.4rem;
     cursor: pointer;
     transition: 0.25s ease;
+    position: relative;
+    z-index: 50;
+    pointer-events: auto;
+    box-shadow: none;
 }
 
 .carousel-btn:hover {
-    background-color: var(--Accent);
+    background-color: rgba(23, 35, 38, 0.08);
     color: var(--Primary);
 }
 
@@ -256,13 +282,46 @@ a {
 }
 
 .section p {
-    color: var(--TextSecondary);
+    color: #52656b;
     line-height: 1.7;
+}
+
+#contact {
+    max-width: none;
+    padding-top: 42px;
+    padding-bottom: 42px;
+    padding-left: 1in;
+    padding-right: 1in;
+    background-color: var(--Primary);
+    color: var(--TextPrimary);
+}
+
+#contact > * {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#contact p {
+    color: var(--TextSecondary);
+}
+
+#contact a {
+    color: var(--TextPrimary);
+    font-weight: 700;
+}
+
+#contact a:hover {
+    color: var(--Accent);
 }
 
 /* MOBILE */
 
 @media(max-width: 768px) {
+
+    .navbar {
+        padding: 0 24px;
+    }
 
     .hamburger {
         display: block;
@@ -305,6 +364,15 @@ a {
         font-size: 1.1rem;
     }
 
+    .nav-title {
+        font-size: 1.55rem;
+    }
+
+    .nav-subheading {
+        font-size: 0.63rem;
+        max-width: 240px;
+    }
+
     .hero {
         padding: 70px 18px;
     }
@@ -314,7 +382,7 @@ a {
     }
 
     .project-carousel {
-        max-width: 95%;
+        max-width: 98%;
         grid-template-columns: 38px 1fr 38px;
         gap: 8px;
     }
@@ -328,23 +396,12 @@ a {
         height: 34px;
         font-size: 1rem;
     }
-}
 
-.carousel-btn {
-    position: relative;
-    z-index: 50;
-    pointer-events: auto;
+    #contact {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }
-
-.project-slider {
-    position: relative;
-    z-index: 1;
-}
-
-.project-card {
-    z-index: 1;
-}
-
 /* LOGO */
 
 .nav-branding {

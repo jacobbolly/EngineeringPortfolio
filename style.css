@@ -470,6 +470,175 @@ header {
     border-radius: 8px;
 }
 
+.project-detail-page {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.project-sidebar {
+    position: sticky;
+    top: 104px;
+    background-color: var(--Panel);
+    border: 1px solid var(--Border);
+    border-radius: 8px;
+    box-shadow: 0 16px 42px rgba(23, 35, 38, 0.08);
+    padding: 18px;
+}
+
+.project-sidebar a {
+    display: block;
+    color: var(--TextSecondary);
+    font-size: 0.9rem;
+    font-weight: 800;
+    padding: 11px 10px;
+    border-radius: 6px;
+}
+
+.project-sidebar a:hover {
+    background-color: var(--PanelSoft);
+    color: var(--Accent);
+}
+
+.project-workspace {
+    display: grid;
+    gap: 22px;
+}
+
+.project-heading-row,
+.project-showcase,
+.project-info-card,
+.project-process,
+.project-gallery,
+.other-projects {
+    background-color: var(--Panel);
+    border: 1px solid var(--Border);
+    border-radius: 8px;
+    box-shadow: 0 16px 42px rgba(23, 35, 38, 0.08);
+    padding: 24px;
+}
+
+.project-heading-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 22px;
+    align-items: start;
+}
+
+.project-heading-row h2 {
+    color: var(--TextPrimary);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 8px;
+}
+
+.project-showcase {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
+    gap: 24px;
+    align-items: center;
+}
+
+.project-showcase h3,
+.project-info-card h3,
+.project-process h3 {
+    color: var(--TextPrimary);
+    margin-bottom: 10px;
+}
+
+.project-showcase img,
+.project-info-card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.project-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.project-info-card p {
+    color: var(--TextSecondary);
+}
+
+.result-chart {
+    height: 150px;
+    display: flex;
+    align-items: end;
+    gap: 12px;
+    border-left: 1px solid var(--Border);
+    border-bottom: 1px solid var(--Border);
+    margin: 16px 0;
+    padding: 0 12px;
+}
+
+.result-chart span {
+    flex: 1;
+    background: linear-gradient(180deg, var(--Accent), #f1dfad);
+    border-radius: 4px 4px 0 0;
+}
+
+.metrics-card dl {
+    display: grid;
+    gap: 12px;
+}
+
+.metrics-card div {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    border-bottom: 1px solid var(--Border);
+    padding-bottom: 10px;
+}
+
+.metrics-card dt {
+    color: var(--TextSecondary);
+    font-weight: 800;
+}
+
+.metrics-card dd {
+    color: var(--TextPrimary);
+    font-weight: 900;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.process-steps article {
+    border: 1px solid var(--Border);
+    border-radius: 8px;
+    padding: 16px;
+    background-color: var(--PanelSoft);
+}
+
+.process-steps span {
+    color: var(--Accent);
+    font-weight: 900;
+}
+
+.project-gallery > div {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.project-gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.compact-showcase {
+    grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.75fr);
+}
+
 .experience-summary {
     color: var(--TextSecondary);
     font-size: clamp(1rem, 1.45vw, 1.24rem);
@@ -649,10 +818,31 @@ header {
     .about-layout,
     .about-values,
     .project-detail,
+    .project-detail-page,
+    .project-showcase,
+    .compact-showcase,
+    .project-card-grid,
+    .process-steps,
+    .project-gallery > div,
     .experience-grid,
     .experience-grid.three-column,
     .experience-item {
         grid-template-columns: 1fr;
+    }
+
+    .project-sidebar {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .project-sidebar a {
+        padding: 8px 10px;
+    }
+
+    .project-heading-row {
+        flex-direction: column;
     }
 
     .hero-panel,

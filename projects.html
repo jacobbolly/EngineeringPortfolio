@@ -41,42 +41,127 @@
       </div>
     </section>
 
-    <section class="section project-list">
-      <article class="project-detail" id="rehab-motion-tracker">
-        <img src="assets/project1.jpg" alt="Rehab Motion Tracker">
-        <div>
-          <p class="eyebrow">Project 01</p>
-          <h2>Rehab Motion Tracker</h2>
-          <p>A rehabilitation-focused concept for measuring motion and supporting more informed recovery workflows.</p>
-        </div>
-      </article>
+    <section class="section project-detail-page" id="rehab-motion-tracker">
+      <aside class="project-sidebar" aria-label="Project sections">
+        <a href="#overview">Overview</a>
+        <a href="#cad-design">CAD &amp; Design</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#data-results">Data &amp; Results</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#other-projects">Other Projects</a>
+      </aside>
 
-      <article class="project-detail" id="printed-prototype">
-        <img src="assets/project2.jpg" alt="3D Printed Prototype">
-        <div>
-          <p class="eyebrow">Project 02</p>
-          <h2>3D Printed Prototype</h2>
-          <p>A physical prototype developed through CAD, fabrication, and hands-on iteration.</p>
+      <div class="project-workspace">
+        <div class="project-heading-row">
+          <div>
+            <p class="eyebrow">Detailed Project</p>
+            <h2>Rehab Motion Tracker</h2>
+            <p>3D printed assistive device for rehabilitation-focused motion tracking and prototype validation.</p>
+          </div>
+          <a class="secondary-button" href="#other-projects">View All Projects</a>
         </div>
-      </article>
 
-      <article class="project-detail" id="embedded-system">
-        <img src="assets/project3.jpg" alt="Embedded System">
-        <div>
-          <p class="eyebrow">Project 03</p>
-          <h2>Embedded System</h2>
-          <p>An embedded engineering project focused on sensing, control, and practical device behavior.</p>
+        <div class="project-showcase" id="overview">
+          <div>
+            <p class="eyebrow">Overview</p>
+            <h3>Assistive rehabilitation concept built through practical engineering iteration.</h3>
+            <p>
+              This project explores how a physical prototype can support guided rehabilitation and motion feedback.
+              The design combines mechanical structure, sensor-focused thinking, and iterative fabrication to make
+              movement easier to evaluate and refine.
+            </p>
+          </div>
+          <img src="assets/project1.jpg" alt="Rehab Motion Tracker prototype">
         </div>
-      </article>
 
-      <article class="project-detail" id="design-project">
-        <img src="assets/project4.jpg" alt="Design Project">
-        <div>
-          <p class="eyebrow">Project 04</p>
-          <h2>Design Project</h2>
-          <p>A design-centered engineering project exploring user needs, constraints, and prototype refinement.</p>
+        <div class="project-card-grid">
+          <article class="project-info-card" id="cad-design">
+            <img src="assets/project2.jpg" alt="3D printed prototype detail">
+            <p class="eyebrow">CAD &amp; Design</p>
+            <h3>Designed For Fit And Iteration</h3>
+            <p>Modeled components for physical testing, ergonomic adjustment, and fast prototype refinement.</p>
+          </article>
+
+          <article class="project-info-card" id="data-results">
+            <p class="eyebrow">Data &amp; Results</p>
+            <h3>Testing Snapshot</h3>
+            <div class="result-chart" aria-label="Prototype test results chart">
+              <span style="height: 34%"></span>
+              <span style="height: 48%"></span>
+              <span style="height: 62%"></span>
+              <span style="height: 74%"></span>
+              <span style="height: 82%"></span>
+            </div>
+            <p>Prototype testing helped compare movement quality, user comfort, and design constraints.</p>
+          </article>
+
+          <article class="project-info-card metrics-card">
+            <p class="eyebrow">Key Metrics</p>
+            <dl>
+              <div><dt>Build Method</dt><dd>3D Printing</dd></div>
+              <div><dt>Focus</dt><dd>Rehabilitation</dd></div>
+              <div><dt>Tools</dt><dd>CAD + Testing</dd></div>
+              <div><dt>Status</dt><dd>Prototype</dd></div>
+            </dl>
+          </article>
         </div>
-      </article>
+
+        <div class="project-process" id="methodology">
+          <p class="eyebrow">Methodology</p>
+          <div class="process-steps">
+            <article><span>01</span><h3>Research</h3><p>Defined the user need and movement constraints.</p></article>
+            <article><span>02</span><h3>Design</h3><p>Built CAD concepts for comfort, fit, and function.</p></article>
+            <article><span>03</span><h3>Prototype</h3><p>Fabricated and refined the design through testing.</p></article>
+            <article><span>04</span><h3>Evaluate</h3><p>Reviewed performance, usability, and next improvements.</p></article>
+          </div>
+        </div>
+
+        <div class="project-showcase compact-showcase" id="analysis">
+          <div>
+            <p class="eyebrow">Analysis</p>
+            <h3>Useful prototypes make tradeoffs visible.</h3>
+            <p>
+              The most important outcome was learning how geometry, material behavior, comfort, and sensing goals
+              interact. That feedback makes the next design cycle more focused and easier to validate.
+            </p>
+          </div>
+          <img src="assets/project3.jpg" alt="Embedded electronics project">
+        </div>
+
+        <div class="project-gallery" id="gallery">
+          <p class="eyebrow">Gallery</p>
+          <div>
+            <img src="assets/project1.jpg" alt="Rehab Motion Tracker">
+            <img src="assets/project2.jpg" alt="3D Printed Prototype">
+            <img src="assets/project3.jpg" alt="Embedded System">
+            <img src="assets/project4.jpg" alt="Design Project">
+          </div>
+        </div>
+
+        <div class="other-projects" id="other-projects">
+          <p class="eyebrow">More Projects</p>
+          <div class="project-card-grid">
+            <article class="project-info-card" id="printed-prototype">
+              <img src="assets/project2.jpg" alt="3D Printed Prototype">
+              <h3>3D Printed Prototype</h3>
+              <p>A physical prototype developed through CAD, fabrication, and hands-on iteration.</p>
+            </article>
+
+            <article class="project-info-card" id="embedded-system">
+              <img src="assets/project3.jpg" alt="Embedded System">
+              <h3>Embedded System</h3>
+              <p>An embedded engineering project focused on sensing, control, and practical device behavior.</p>
+            </article>
+
+            <article class="project-info-card" id="design-project">
+              <img src="assets/project4.jpg" alt="Design Project">
+              <h3>Design Project</h3>
+              <p>A design-centered engineering project exploring user needs, constraints, and prototype refinement.</p>
+            </article>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="contact">

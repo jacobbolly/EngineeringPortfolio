@@ -322,8 +322,8 @@ a {
     bottom: 28px;
     color: var(--TextPrimary);
     font-size: 4.8rem;
-    font-weight: 900;
-    letter-spacing: -3px;
+    font-weight: 300;
+    letter-spacing: -1px;
     line-height: 1;
 }
 

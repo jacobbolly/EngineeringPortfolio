@@ -490,19 +490,20 @@ a {
 
     .nav-menu {
         position: fixed;
-        right: -100%;
+        right: 0;
         top: 70px;
         flex-direction: column;
         background-color: var(--Primary);
         width: 100%;
         text-align: center;
         transition: 0.3s;
+        transform: translateX(100%);
         padding: 28px 0;
         gap: 18px;
     }
 
     .nav-menu.active {
-        right: 0;
+        transform: translateX(0);
     }
 
     .nav-item {

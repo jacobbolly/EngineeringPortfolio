@@ -472,7 +472,7 @@ header {
 
 .experience-summary {
     color: var(--TextSecondary);
-    font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+    font-size: clamp(1rem, 1.45vw, 1.24rem);
     font-weight: 600;
     line-height: 1.55;
     max-width: 840px;
@@ -507,8 +507,8 @@ header {
 
 .experience-item {
     display: grid;
-    grid-template-columns: 150px minmax(0, 1fr);
-    gap: 28px;
+    grid-template-columns: 1fr;
+    gap: 14px;
 }
 
 .experience-date {
@@ -517,6 +517,9 @@ header {
     font-weight: 900;
     letter-spacing: 1px;
     text-transform: uppercase;
+    width: max-content;
+    border-bottom: 1px solid var(--Border);
+    padding-bottom: 8px;
 }
 
 .experience-card h2,

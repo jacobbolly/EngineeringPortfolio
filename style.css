@@ -294,6 +294,7 @@ a {
     padding-right: 1in;
     background-color: var(--Primary);
     color: var(--TextPrimary);
+    position: relative;
 }
 
 #contact > * {
@@ -312,6 +313,35 @@ a {
 }
 
 #contact a:hover {
+    color: var(--Accent);
+}
+
+.contact-logo {
+    position: absolute;
+    right: 1in;
+    bottom: 28px;
+    color: var(--TextPrimary);
+    font-size: 4.8rem;
+    font-weight: 900;
+    letter-spacing: -3px;
+    line-height: 1;
+}
+
+.contact-logo::after {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 5px;
+    margin: 14px auto 0;
+    border-radius: 999px;
+    background-color: var(--Accent);
+}
+
+.logo-j {
+    color: var(--TextPrimary);
+}
+
+.logo-b {
     color: var(--Accent);
 }
 
@@ -401,43 +431,13 @@ a {
         padding-left: 24px;
         padding-right: 24px;
     }
-}
-/* LOGO */
 
-.nav-branding {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.logo-mark {
-    font-size: 2rem;
-    font-weight: 900;
-    letter-spacing: 1px;
-    line-height: 1;
-    position: relative;
-}
-
-.logo-mark::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -6px;
-    transform: translateX(-50%);
-    width: 26px;
-    height: 3px;
-    border-radius: 999px;
-    background-color: var(--Accent);
-}
-
-.logo-j {
-    color: var(--TextPrimary);
-}
-
-.logo-b {
-    color: var(--Accent);
-}
-
-.name-text {
-    color: var(--TextPrimary);
+    .contact-logo {
+        position: static;
+        display: block;
+        width: max-content;
+        font-size: 3.6rem;
+        margin-top: 24px;
+        margin-left: auto;
+    }
 }

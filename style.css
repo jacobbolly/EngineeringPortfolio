@@ -383,6 +383,10 @@ header {
     padding: 54px;
 }
 
+.page-hero .hero-content {
+    max-width: 1440px;
+}
+
 .about-intro {
     display: grid;
     grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
@@ -472,9 +476,12 @@ header {
 
 .project-detail-page {
     display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-columns: 190px minmax(0, 1fr);
     gap: 24px;
     align-items: start;
+    max-width: 1440px;
+    padding-left: 36px;
+    padding-right: 36px;
 }
 
 .project-sidebar {

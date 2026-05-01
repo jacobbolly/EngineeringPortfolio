@@ -120,8 +120,8 @@ header {
     min-height: 360px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-    gap: 56px;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.82fr);
+    gap: 36px;
     align-items: center;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(249, 250, 248, 0.98));
     border: 1px solid var(--Border);
@@ -131,7 +131,8 @@ header {
 }
 
 .hero-copy {
-    max-width: 560px;
+    max-width: 620px;
+    justify-self: center;
 }
 
 .eyebrow {

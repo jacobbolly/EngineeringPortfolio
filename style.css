@@ -112,12 +112,12 @@ header {
 }
 
 .hero {
-    padding: 34px 1in 34px;
+    padding: 24px 1in 26px;
 }
 
 .hero-panel {
     max-width: 1440px;
-    min-height: 430px;
+    min-height: 360px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
@@ -127,7 +127,7 @@ header {
     border: 1px solid var(--Border);
     border-radius: 8px;
     box-shadow: var(--Shadow);
-    padding: 54px;
+    padding: 38px 46px;
 }
 
 .hero-copy {
@@ -205,10 +205,10 @@ header {
 
 .hero-portrait {
     width: 100%;
-    min-height: 330px;
-    max-height: 420px;
+    min-height: 360px;
+    max-height: 520px;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 22%;
     border-radius: 8px;
 }
 
@@ -285,9 +285,9 @@ header {
     z-index: 2;
     width: max-content;
     max-width: calc(100% - 36px);
-    border: 1px solid rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.58);
     border-radius: 8px;
-    background-color: rgba(23, 35, 38, 0.62);
+    background-color: rgba(255, 255, 255, 0.74);
     backdrop-filter: blur(8px);
     padding: 10px 12px;
 }
@@ -299,7 +299,7 @@ header {
 }
 
 .project-overlay p {
-    color: var(--TextSecondary);
+    color: #4b5b61;
     font-size: 0.82rem;
 }
 

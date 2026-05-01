@@ -113,3 +113,22 @@ if (slideTrack && slider && originalSlides.length > 0 && prevButton && nextButto
   centerActiveSlide();
   requestAnimationFrame(centerActiveSlide);
 }
+
+document.querySelectorAll(".project-sidebar a[href^='#']").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
+    const targetSection = targetId ? document.querySelector(targetId) : null;
+
+    if (!targetSection) {
+      return;
+    }
+
+    event.preventDefault();
+    targetSection.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest",
+    });
+    history.replaceState(null, "", targetId);
+  });
+});

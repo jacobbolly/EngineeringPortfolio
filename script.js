@@ -40,7 +40,7 @@ if (slideTrack && slides.length > 0 && prevButton && nextButton) {
     : [];
 
   const updateCarousel = () => {
-    slideTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    slideTrack.style.transform = `translateX(-${slides[currentSlide].offsetLeft}px)`;
 
     dots.forEach((dot, index) => {
       dot.classList.toggle("active", index === currentSlide);
@@ -59,6 +59,7 @@ if (slideTrack && slides.length > 0 && prevButton && nextButton) {
 
   nextButton.addEventListener("click", showNextSlide);
   prevButton.addEventListener("click", showPreviousSlide);
+  window.addEventListener("resize", updateCarousel);
 
   updateCarousel();
 }

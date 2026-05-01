@@ -772,18 +772,26 @@ header {
     position: absolute;
     left: 23px;
     right: 23px;
-    bottom: 23px;
+    bottom: 29px;
     height: 2px;
-    background-color: var(--Accent);
+    background: linear-gradient(
+        to right,
+        var(--Accent) 0,
+        var(--Accent) calc(50% - 7px),
+        transparent calc(50% - 7px),
+        transparent calc(50% + 7px),
+        var(--Accent) calc(50% + 7px),
+        var(--Accent) 100%
+    );
 }
 
 .contact-logo::before {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: 6px;
+    bottom: 13px;
     width: 2px;
-    height: 36px;
+    height: 34px;
     background-color: var(--Accent);
     transform: translateX(-50%);
 }

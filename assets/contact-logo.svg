@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="title">
+  <title>JB logo</title>
+  <g font-family="Georgia, 'Times New Roman', serif" font-weight="400">
+    <text x="84" y="214" font-size="205" fill="#111c1f">J</text>
+    <text x="170" y="214" font-size="205" fill="#d4ad3f">B</text>
+  </g>
+  <g fill="#d4ad3f">
+    <rect x="76" y="278" width="105" height="5" rx="1"/>
+    <rect x="203" y="278" width="105" height="5" rx="1"/>
+    <rect x="192" y="248" width="5" height="78" rx="1"/>
+  </g>
+</svg>

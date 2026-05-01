@@ -16,12 +16,13 @@ if (hamburger && navMenu) {
 }
 
 const slideTrack = document.querySelector(".slide-track");
+const slider = document.querySelector(".project-slider");
 const slides = Array.from(document.querySelectorAll(".project-card"));
 const prevButton = document.querySelector(".prev-btn");
 const nextButton = document.querySelector(".next-btn");
 const dotsContainer = document.querySelector(".carousel-dots");
 
-if (slideTrack && slides.length > 0 && prevButton && nextButton) {
+if (slideTrack && slider && slides.length > 0 && prevButton && nextButton) {
   let currentSlide = 0;
 
   const dots = dotsContainer
@@ -40,7 +41,11 @@ if (slideTrack && slides.length > 0 && prevButton && nextButton) {
     : [];
 
   const updateCarousel = () => {
-    slideTrack.style.transform = `translateX(-${slides[currentSlide].offsetLeft}px)`;
+    const activeSlide = slides[currentSlide];
+    const centeredOffset =
+      activeSlide.offsetLeft + activeSlide.offsetWidth / 2 - slider.clientWidth / 2;
+
+    slideTrack.style.transform = `translateX(${-centeredOffset}px)`;
 
     dots.forEach((dot, index) => {
       dot.classList.toggle("active", index === currentSlide);

@@ -757,7 +757,7 @@ header {
     top: 50%;
     transform: translateY(-50%);
     width: 116px;
-    height: 112px;
+    height: 118px;
     color: var(--TextPrimary);
     font-family: Georgia, "Times New Roman", serif;
     font-size: 4.7rem;
@@ -770,9 +770,9 @@ header {
 .contact-logo::after {
     content: "";
     position: absolute;
-    left: 8px;
-    right: 8px;
-    bottom: 21px;
+    left: 23px;
+    right: 23px;
+    bottom: 23px;
     height: 2px;
     background-color: var(--Accent);
 }
@@ -781,9 +781,9 @@ header {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 6px;
     width: 2px;
-    height: 43px;
+    height: 36px;
     background-color: var(--Accent);
     transform: translateX(-50%);
 }

@@ -94,7 +94,10 @@ if (slideTrack && slider && originalSlides.length > 0 && prevButton && nextButto
 
   nextButton.addEventListener("click", showNextSlide);
   prevButton.addEventListener("click", showPreviousSlide);
-  window.addEventListener("resize", () => updateCarousel(false));
+  const centerActiveSlide = () => updateCarousel(false);
+
+  window.addEventListener("resize", centerActiveSlide);
+  window.addEventListener("load", centerActiveSlide);
   slideTrack.addEventListener("transitionend", () => {
     if (trackIndex >= slideCount * 2) {
       trackIndex -= slideCount;
@@ -107,5 +110,6 @@ if (slideTrack && slider && originalSlides.length > 0 && prevButton && nextButto
     }
   });
 
-  updateCarousel(false);
+  centerActiveSlide();
+  requestAnimationFrame(centerActiveSlide);
 }

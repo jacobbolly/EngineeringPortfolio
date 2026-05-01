@@ -756,54 +756,9 @@ header {
     right: 1in;
     top: 50%;
     transform: translateY(-50%);
-    width: 116px;
-    height: 118px;
-    color: var(--TextPrimary);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 4.7rem;
-    font-weight: 400;
-    letter-spacing: -9px;
-    line-height: 0.9;
-    text-align: center;
-}
-
-.contact-logo::after {
-    content: "";
-    position: absolute;
-    left: 23px;
-    right: 23px;
-    bottom: 29px;
-    height: 2px;
-    background: linear-gradient(
-        to right,
-        var(--Accent) 0,
-        var(--Accent) calc(50% - 7px),
-        transparent calc(50% - 7px),
-        transparent calc(50% + 7px),
-        var(--Accent) calc(50% + 7px),
-        var(--Accent) 100%
-    );
-}
-
-.contact-logo::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 13px;
-    width: 2px;
-    height: 34px;
-    background-color: var(--Accent);
-    transform: translateX(-50%);
-}
-
-.logo-j {
-    color: var(--TextPrimary);
-}
-
-.logo-b {
-    color: var(--Accent);
-    display: inline-block;
-    transform: translateX(-2px);
+    width: 132px;
+    height: 132px;
+    object-fit: contain;
 }
 
 @media(max-width: 900px) {
@@ -901,8 +856,8 @@ header {
     .contact-logo {
         position: static;
         transform: none;
-        width: max-content;
+        width: 112px;
+        height: 112px;
         margin: 24px 0 0 auto;
-        font-size: 3.5rem;
     }
 }

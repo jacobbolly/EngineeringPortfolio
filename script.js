@@ -17,22 +17,23 @@ if (hamburger && navMenu) {
 
 const slideTrack = document.querySelector(".slide-track");
 const slider = document.querySelector(".project-slider");
-const slides = Array.from(document.querySelectorAll(".project-card"));
+const originalSlides = Array.from(document.querySelectorAll(".project-card"));
 const prevButton = document.querySelector(".prev-btn");
 const nextButton = document.querySelector(".next-btn");
 const dotsContainer = document.querySelector(".carousel-dots");
 
-if (slideTrack && slider && slides.length > 0 && prevButton && nextButton) {
-  let currentSlide = 0;
+if (slideTrack && slider && originalSlides.length > 0 && prevButton && nextButton) {
+  const slideCount = originalSlides.length;
+  let trackIndex = slideCount;
 
   const dots = dotsContainer
-    ? slides.map((_, index) => {
+    ? originalSlides.map((_, index) => {
         const dot = document.createElement("button");
         dot.type = "button";
         dot.className = "carousel-dot";
         dot.setAttribute("aria-label", `Go to project ${index + 1}`);
         dot.addEventListener("click", () => {
-          currentSlide = index;
+          trackIndex = slideCount + index;
           updateCarousel();
         });
         dotsContainer.appendChild(dot);
@@ -40,31 +41,71 @@ if (slideTrack && slider && slides.length > 0 && prevButton && nextButton) {
       })
     : [];
 
-  const updateCarousel = () => {
-    const activeSlide = slides[currentSlide];
+  const beforeClones = originalSlides.map((slide) => {
+    const clone = slide.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    return clone;
+  });
+
+  const afterClones = originalSlides.map((slide) => {
+    const clone = slide.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    return clone;
+  });
+
+  beforeClones
+    .slice()
+    .reverse()
+    .forEach((clone) => slideTrack.insertBefore(clone, slideTrack.firstChild));
+  afterClones.forEach((clone) => slideTrack.appendChild(clone));
+
+  const slides = Array.from(slideTrack.querySelectorAll(".project-card"));
+
+  const getOriginalIndex = () => (trackIndex - slideCount + slideCount) % slideCount;
+
+  const updateCarousel = (animate = true) => {
+    slideTrack.style.transition = animate ? "" : "none";
+
+    const activeSlide = slides[trackIndex];
     const centeredOffset =
       activeSlide.offsetLeft + activeSlide.offsetWidth / 2 - slider.clientWidth / 2;
 
     slideTrack.style.transform = `translateX(${-centeredOffset}px)`;
 
     dots.forEach((dot, index) => {
-      dot.classList.toggle("active", index === currentSlide);
+      dot.classList.toggle("active", index === getOriginalIndex());
     });
+
+    if (!animate) {
+      slideTrack.offsetHeight;
+      slideTrack.style.transition = "";
+    }
   };
 
   const showNextSlide = () => {
-    currentSlide = (currentSlide + 1) % slides.length;
+    trackIndex += 1;
     updateCarousel();
   };
 
   const showPreviousSlide = () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    trackIndex -= 1;
     updateCarousel();
   };
 
   nextButton.addEventListener("click", showNextSlide);
   prevButton.addEventListener("click", showPreviousSlide);
-  window.addEventListener("resize", updateCarousel);
+  window.addEventListener("resize", () => updateCarousel(false));
+  slideTrack.addEventListener("transitionend", () => {
+    if (trackIndex >= slideCount * 2) {
+      trackIndex -= slideCount;
+      updateCarousel(false);
+    }
 
-  updateCarousel();
+    if (trackIndex < slideCount) {
+      trackIndex += slideCount;
+      updateCarousel(false);
+    }
+  });
+
+  updateCarousel(false);
 }

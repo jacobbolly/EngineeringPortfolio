@@ -756,29 +756,47 @@ header {
     right: 1in;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--TextPrimary);
-    font-size: 4.6rem;
-    font-weight: 300;
-    letter-spacing: -1px;
-    line-height: 1;
+    width: 116px;
+    height: 112px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 4.7rem;
+    font-weight: 400;
+    letter-spacing: -9px;
+    line-height: 0.9;
+    text-align: center;
 }
 
 .contact-logo::after {
     content: "";
-    display: block;
-    width: 44px;
-    height: 5px;
-    margin: 12px auto 0;
-    border-radius: 999px;
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 14px;
+    height: 2px;
     background-color: var(--Accent);
 }
 
+.contact-logo::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 7px;
+    width: 2px;
+    height: 25px;
+    background-color: var(--Accent);
+    transform: translateX(-50%);
+    box-shadow: 0 10px 0 -0.5px var(--Accent);
+}
+
 .logo-j {
-    color: var(--TextPrimary);
+    color: #ffffff;
 }
 
 .logo-b {
     color: var(--Accent);
+    display: inline-block;
+    transform: translateX(-2px);
 }
 
 @media(max-width: 900px) {

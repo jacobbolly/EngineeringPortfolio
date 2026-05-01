@@ -758,7 +758,7 @@ header {
     transform: translateY(-50%);
     width: 116px;
     height: 112px;
-    color: #ffffff;
+    color: var(--TextPrimary);
     font-family: Georgia, "Times New Roman", serif;
     font-size: 4.7rem;
     font-weight: 400;
@@ -770,9 +770,9 @@ header {
 .contact-logo::after {
     content: "";
     position: absolute;
-    left: 18px;
-    right: 18px;
-    bottom: 14px;
+    left: 8px;
+    right: 8px;
+    bottom: 21px;
     height: 2px;
     background-color: var(--Accent);
 }
@@ -781,16 +781,15 @@ header {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: 7px;
+    bottom: 0;
     width: 2px;
-    height: 25px;
+    height: 43px;
     background-color: var(--Accent);
     transform: translateX(-50%);
-    box-shadow: 0 10px 0 -0.5px var(--Accent);
 }
 
 .logo-j {
-    color: #ffffff;
+    color: var(--TextPrimary);
 }
 
 .logo-b {

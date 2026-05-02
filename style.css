@@ -549,6 +549,34 @@ header {
     margin-bottom: 8px;
 }
 
+.metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.metrics-strip div {
+    background-color: var(--Panel);
+    border: 1px solid var(--Border);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.metrics-strip span {
+    display: block;
+    color: var(--TextSecondary);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.metrics-strip strong {
+    color: var(--TextPrimary);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+
 .project-showcase {
     display: grid;
     grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
@@ -583,6 +611,15 @@ header {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
+}
+
+.data-results-card {
+    grid-column: span 2;
+}
+
+.data-results-card .data-visuals {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
 }
 
 .project-info-card p {
@@ -845,7 +882,9 @@ header {
     .project-detail-page,
     .project-showcase,
     .compact-showcase,
+    .metrics-strip,
     .project-card-grid,
+    .data-results-card .data-visuals,
     .process-steps,
     .project-gallery > div,
     .experience-grid,
@@ -867,6 +906,10 @@ header {
 
     .project-heading-row {
         flex-direction: column;
+    }
+
+    .data-results-card {
+        grid-column: auto;
     }
 
     .hero-panel,

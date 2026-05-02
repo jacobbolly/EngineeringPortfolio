@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" role="img" aria-labelledby="title desc">
+  <title id="title">Bone Extraction Test Times</title>
+  <desc id="desc">Bar chart comparing Kerrison Rongeur and OsteoX bone extraction times for two test subjects.</desc>
+  <rect width="760" height="440" fill="#ffffff"/>
+  <text x="56" y="48" fill="#111c1f" font-family="Arial, sans-serif" font-size="26" font-weight="700">Bone Extraction Test Times</text>
+  <text x="56" y="76" fill="#526064" font-family="Arial, sans-serif" font-size="14">Slide 13 data: OsteoX reduced removal time by 59% and 51%.</text>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#526064">
+    <text x="28" y="335">0</text>
+    <text x="22" y="281">100</text>
+    <text x="22" y="227">200</text>
+    <text x="22" y="173">300</text>
+    <text x="22" y="119">400</text>
+    <text x="22" y="65">500</text>
+  </g>
+  <g stroke="#d9e0dd" stroke-width="1">
+    <line x1="58" y1="330" x2="708" y2="330"/>
+    <line x1="58" y1="276" x2="708" y2="276"/>
+    <line x1="58" y1="222" x2="708" y2="222"/>
+    <line x1="58" y1="168" x2="708" y2="168"/>
+    <line x1="58" y1="114" x2="708" y2="114"/>
+    <line x1="58" y1="60" x2="708" y2="60"/>
+  </g>
+  <line x1="58" y1="330" x2="708" y2="330" stroke="#111c1f" stroke-width="2"/>
+  <line x1="58" y1="60" x2="58" y2="330" stroke="#111c1f" stroke-width="2"/>
+  <g>
+    <rect x="126" y="72.5" width="54" height="257.5" rx="4" fill="#111c1f"/>
+    <rect x="190" y="246.8" width="54" height="83.2" rx="4" fill="#d4ad3f"/>
+    <rect x="412" y="89.2" width="54" height="240.8" rx="4" fill="#111c1f"/>
+    <rect x="476" y="236.4" width="54" height="93.6" rx="4" fill="#d4ad3f"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="14" fill="#111c1f" text-anchor="middle">
+    <text x="153" y="358">Rongeur</text>
+    <text x="217" y="358">OsteoX</text>
+    <text x="439" y="358">Rongeur</text>
+    <text x="503" y="358">OsteoX</text>
+    <text x="185" y="392" font-weight="700">Subject 1</text>
+    <text x="471" y="392" font-weight="700">Subject 2</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#111c1f" text-anchor="middle">
+    <text x="153" y="62">476.8s</text>
+    <text x="217" y="238">154.0s</text>
+    <text x="439" y="80">446.0s</text>
+    <text x="503" y="228">173.4s</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#111c1f">
+    <rect x="576" y="82" width="16" height="16" fill="#111c1f" rx="2"/>
+    <text x="602" y="95">Kerrison Rongeur</text>
+    <rect x="576" y="108" width="16" height="16" fill="#d4ad3f" rx="2"/>
+    <text x="602" y="121">OsteoX</text>
+  </g>
+  <text x="22" y="218" fill="#526064" font-family="Arial, sans-serif" font-size="13" transform="rotate(-90 22 218)" text-anchor="middle">Time (s)</text>
+</svg>

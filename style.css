@@ -528,6 +528,7 @@ header {
 .project-info-card,
 .project-process,
 .project-gallery,
+.project-contributors,
 .other-projects {
     background-color: var(--Panel);
     border: 1px solid var(--Border);
@@ -721,6 +722,22 @@ header {
     background-color: #ffffff;
 }
 
+.project-contributors > div {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.project-contributors span {
+    display: block;
+    color: var(--TextPrimary);
+    font-weight: 800;
+    background-color: var(--PanelSoft);
+    border: 1px solid var(--Border);
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
 .compact-showcase {
     grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.75fr);
 }
@@ -892,6 +909,7 @@ header {
     .data-results-card .data-visuals,
     .process-steps,
     .project-gallery > div,
+    .project-contributors > div,
     .experience-grid,
     .experience-grid.three-column,
     .experience-item {

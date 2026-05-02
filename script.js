@@ -227,13 +227,17 @@ const projectSwitchViewport = document.querySelector(".project-switch-viewport")
 const projectSwitchCards = Array.from(document.querySelectorAll(".project-switch-card"));
 const projectSwitchPrev = document.querySelector(".project-switch-prev");
 const projectSwitchNext = document.querySelector(".project-switch-next");
+let projectSwitchIndex = Math.max(
+  0,
+  projectSwitchCards.findIndex((card) => card.classList.contains("active"))
+);
 
-const centerProjectSwitchCard = (projectId) => {
+const centerProjectSwitchCardByIndex = (index) => {
   if (!projectSwitchTrack || !projectSwitchViewport) {
     return;
   }
 
-  const activeCard = projectSwitchCards.find((card) => card.getAttribute("href") === `#${projectId}`);
+  const activeCard = projectSwitchCards[index];
 
   if (!activeCard) {
     return;
@@ -247,12 +251,22 @@ const centerProjectSwitchCard = (projectId) => {
   projectSwitchTrack.style.transform = `translateX(${-boundedOffset}px)`;
 };
 
-const getProjectIdByStep = (step) => {
-  const currentIndex = projectSwitchCards.findIndex((card) => card.classList.contains("active"));
-  const safeIndex = currentIndex >= 0 ? currentIndex : 0;
-  const nextIndex = (safeIndex + step + projectSwitchCards.length) % projectSwitchCards.length;
+const centerProjectSwitchCard = (projectId) => {
+  const projectIndex = projectSwitchCards.findIndex((card) => card.getAttribute("href") === `#${projectId}`);
 
-  return projectSwitchCards[nextIndex]?.getAttribute("href")?.slice(1);
+  if (projectIndex >= 0) {
+    projectSwitchIndex = projectIndex;
+    centerProjectSwitchCardByIndex(projectSwitchIndex);
+  }
+};
+
+const moveProjectSwitchCarousel = (step) => {
+  if (projectSwitchCards.length === 0) {
+    return;
+  }
+
+  projectSwitchIndex = (projectSwitchIndex + step + projectSwitchCards.length) % projectSwitchCards.length;
+  centerProjectSwitchCardByIndex(projectSwitchIndex);
 };
 
 const setActiveProject = (projectId, updateHash = true) => {
@@ -321,19 +335,11 @@ document.querySelectorAll(".project-sidebar a[href^='#'], .other-projects a[href
 });
 
 projectSwitchPrev?.addEventListener("click", () => {
-  const projectId = getProjectIdByStep(-1);
-
-  if (projectId) {
-    setActiveProject(projectId);
-  }
+  moveProjectSwitchCarousel(-1);
 });
 
 projectSwitchNext?.addEventListener("click", () => {
-  const projectId = getProjectIdByStep(1);
-
-  if (projectId) {
-    setActiveProject(projectId);
-  }
+  moveProjectSwitchCarousel(1);
 });
 
 window.addEventListener("resize", () => {

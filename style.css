@@ -494,6 +494,26 @@ header {
     padding-right: 36px;
 }
 
+.project-detail-page:not(.active) {
+    display: none;
+}
+
+.project-detail-page.active {
+    animation: projectFadeIn 240ms ease;
+}
+
+@keyframes projectFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .project-sidebar {
     position: sticky;
     top: 104px;
@@ -548,6 +568,19 @@ a.project-info-card {
 a.project-info-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 20px 48px rgba(23, 35, 38, 0.12);
+}
+
+.project-switcher {
+    padding-bottom: 12px;
+}
+
+.project-switch-card {
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.project-switch-card.active {
+    border-color: var(--Accent);
+    box-shadow: 0 20px 48px rgba(108, 92, 67, 0.16);
 }
 
 .project-heading-row {

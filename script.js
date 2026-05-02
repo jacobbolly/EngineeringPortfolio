@@ -217,9 +217,57 @@ if (slideTrack && slider && prevButton && nextButton) {
   populateCarouselFromProjects().finally(initializeCarousel);
 }
 
-document.querySelectorAll(".project-sidebar a[href^='#'], .other-projects a[href^='#'], .secondary-button[href^='#']").forEach((link) => {
+const projectSections = Array.from(document.querySelectorAll(".project-detail-page[id]"));
+const projectIds = new Set(projectSections.map((section) => section.id));
+const projectSwitchLinks = Array.from(
+  document.querySelectorAll(".project-switch-card[href^='#'], .other-projects a[href^='#']")
+);
+
+const setActiveProject = (projectId, updateHash = true) => {
+  const activeProject = projectSections.find((section) => section.id === projectId);
+
+  if (!activeProject) {
+    return false;
+  }
+
+  projectSections.forEach((section) => {
+    section.classList.toggle("active", section === activeProject);
+  });
+
+  projectSwitchLinks.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${projectId}`);
+  });
+
+  activeProject.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "nearest",
+  });
+
+  if (updateHash) {
+    history.replaceState(null, "", `#${projectId}`);
+  }
+
+  return true;
+};
+
+const initialProjectId = window.location.hash.slice(1);
+
+if (projectIds.has(initialProjectId)) {
+  setActiveProject(initialProjectId, false);
+}
+
+document.querySelectorAll(".project-sidebar a[href^='#'], .other-projects a[href^='#'], .secondary-button[href^='#'], .project-switch-card[href^='#']").forEach((link) => {
   link.addEventListener("click", (event) => {
     const targetId = link.getAttribute("href");
+    const projectId = targetId ? targetId.slice(1) : "";
+
+    if (projectIds.has(projectId)) {
+      event.preventDefault();
+      setActiveProject(projectId);
+      return;
+    }
+
     const targetSection = targetId ? document.querySelector(targetId) : null;
 
     if (!targetSection) {

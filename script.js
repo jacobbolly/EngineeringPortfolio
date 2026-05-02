@@ -217,7 +217,7 @@ if (slideTrack && slider && prevButton && nextButton) {
   populateCarouselFromProjects().finally(initializeCarousel);
 }
 
-document.querySelectorAll(".project-sidebar a[href^='#']").forEach((link) => {
+document.querySelectorAll(".project-sidebar a[href^='#'], .other-projects a[href^='#'], .secondary-button[href^='#']").forEach((link) => {
   link.addEventListener("click", (event) => {
     const targetId = link.getAttribute("href");
     const targetSection = targetId ? document.querySelector(targetId) : null;

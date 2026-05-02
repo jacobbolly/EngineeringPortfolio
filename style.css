@@ -537,6 +537,19 @@ header {
     padding: 24px;
 }
 
+.project-info-card {
+    display: block;
+}
+
+a.project-info-card {
+    color: inherit;
+}
+
+a.project-info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 48px rgba(23, 35, 38, 0.12);
+}
+
 .project-heading-row {
     display: flex;
     justify-content: space-between;

@@ -574,13 +574,48 @@ a.project-info-card:hover {
     padding-bottom: 12px;
 }
 
+.project-switch-carousel {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) 38px;
+    gap: 12px;
+    align-items: center;
+}
+
+.project-switch-viewport {
+    overflow: hidden;
+    padding: 6px 2px 20px;
+}
+
+.project-switch-track {
+    display: flex;
+    gap: 18px;
+    transition: transform 320ms ease;
+    will-change: transform;
+}
+
 .project-switch-card {
+    flex: 0 0 min(360px, calc(100vw - 136px));
     transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .project-switch-card.active {
     border-color: var(--Accent);
     box-shadow: 0 20px 48px rgba(108, 92, 67, 0.16);
+}
+
+.project-switch-btn {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    background-color: transparent;
+    color: var(--TextSecondary);
+    cursor: pointer;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.project-switch-btn:hover {
+    color: var(--Accent);
 }
 
 .project-heading-row {

@@ -222,6 +222,38 @@ const projectIds = new Set(projectSections.map((section) => section.id));
 const projectSwitchLinks = Array.from(
   document.querySelectorAll(".project-switch-card[href^='#'], .other-projects a[href^='#']")
 );
+const projectSwitchTrack = document.querySelector(".project-switch-track");
+const projectSwitchViewport = document.querySelector(".project-switch-viewport");
+const projectSwitchCards = Array.from(document.querySelectorAll(".project-switch-card"));
+const projectSwitchPrev = document.querySelector(".project-switch-prev");
+const projectSwitchNext = document.querySelector(".project-switch-next");
+
+const centerProjectSwitchCard = (projectId) => {
+  if (!projectSwitchTrack || !projectSwitchViewport) {
+    return;
+  }
+
+  const activeCard = projectSwitchCards.find((card) => card.getAttribute("href") === `#${projectId}`);
+
+  if (!activeCard) {
+    return;
+  }
+
+  const maxOffset = Math.max(0, projectSwitchTrack.scrollWidth - projectSwitchViewport.clientWidth);
+  const centeredOffset =
+    activeCard.offsetLeft + activeCard.offsetWidth / 2 - projectSwitchViewport.clientWidth / 2;
+  const boundedOffset = Math.min(Math.max(centeredOffset, 0), maxOffset);
+
+  projectSwitchTrack.style.transform = `translateX(${-boundedOffset}px)`;
+};
+
+const getProjectIdByStep = (step) => {
+  const currentIndex = projectSwitchCards.findIndex((card) => card.classList.contains("active"));
+  const safeIndex = currentIndex >= 0 ? currentIndex : 0;
+  const nextIndex = (safeIndex + step + projectSwitchCards.length) % projectSwitchCards.length;
+
+  return projectSwitchCards[nextIndex]?.getAttribute("href")?.slice(1);
+};
 
 const setActiveProject = (projectId, updateHash = true) => {
   const activeProject = projectSections.find((section) => section.id === projectId);
@@ -237,6 +269,8 @@ const setActiveProject = (projectId, updateHash = true) => {
   projectSwitchLinks.forEach((link) => {
     link.classList.toggle("active", link.getAttribute("href") === `#${projectId}`);
   });
+
+  centerProjectSwitchCard(projectId);
 
   activeProject.scrollIntoView({
     behavior: "smooth",
@@ -255,6 +289,8 @@ const initialProjectId = window.location.hash.slice(1);
 
 if (projectIds.has(initialProjectId)) {
   setActiveProject(initialProjectId, false);
+} else if (projectSections.length > 0) {
+  centerProjectSwitchCard(projectSections.find((section) => section.classList.contains("active"))?.id || projectSections[0].id);
 }
 
 document.querySelectorAll(".project-sidebar a[href^='#'], .other-projects a[href^='#'], .secondary-button[href^='#'], .project-switch-card[href^='#']").forEach((link) => {
@@ -282,4 +318,28 @@ document.querySelectorAll(".project-sidebar a[href^='#'], .other-projects a[href
     });
     history.replaceState(null, "", targetId);
   });
+});
+
+projectSwitchPrev?.addEventListener("click", () => {
+  const projectId = getProjectIdByStep(-1);
+
+  if (projectId) {
+    setActiveProject(projectId);
+  }
+});
+
+projectSwitchNext?.addEventListener("click", () => {
+  const projectId = getProjectIdByStep(1);
+
+  if (projectId) {
+    setActiveProject(projectId);
+  }
+});
+
+window.addEventListener("resize", () => {
+  const activeProject = projectSections.find((section) => section.classList.contains("active"));
+
+  if (activeProject) {
+    centerProjectSwitchCard(activeProject.id);
+  }
 });

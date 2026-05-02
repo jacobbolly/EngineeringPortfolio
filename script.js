@@ -17,12 +17,111 @@ if (hamburger && navMenu) {
 
 const slideTrack = document.querySelector(".slide-track");
 const slider = document.querySelector(".project-slider");
-const originalSlides = Array.from(document.querySelectorAll(".project-card"));
 const prevButton = document.querySelector(".prev-btn");
 const nextButton = document.querySelector(".next-btn");
 const dotsContainer = document.querySelector(".carousel-dots");
 
-if (slideTrack && slider && originalSlides.length > 0 && prevButton && nextButton) {
+const createProjectCard = ({ href, title, image, imageAlt, imageClass = "" }) => {
+  const card = document.createElement("a");
+  card.href = href;
+  card.className = "project-card";
+
+  const img = document.createElement("img");
+  img.src = image;
+  img.alt = imageAlt || title;
+  if (imageClass) {
+    img.className = imageClass;
+  }
+
+  const overlay = document.createElement("div");
+  overlay.className = "project-overlay";
+
+  const heading = document.createElement("h3");
+  heading.textContent = title;
+
+  const copy = document.createElement("p");
+  copy.textContent = "Click to view project";
+
+  overlay.append(heading, copy);
+  card.append(img, overlay);
+
+  return card;
+};
+
+const getProjectImage = (project) => {
+  const explicitImage = project.dataset.projectImage;
+
+  if (explicitImage) {
+    return {
+      src: explicitImage,
+      alt: project.dataset.projectImageAlt || project.querySelector("h2, h3")?.textContent.trim() || "Project image",
+      className: project.dataset.projectImageClass || "",
+    };
+  }
+
+  const image = project.querySelector("img");
+
+  return {
+    src: image?.getAttribute("src") || "",
+    alt: image?.getAttribute("alt") || project.querySelector("h2, h3")?.textContent.trim() || "Project image",
+    className: image?.className || "",
+  };
+};
+
+const getProjectsFromDocument = (doc) =>
+  Array.from(doc.querySelectorAll("[data-carousel-project], .other-projects .project-info-card"))
+    .map((project) => {
+      const title = project.querySelector("h2, h3")?.textContent.trim();
+      const id = project.dataset.projectId || project.id;
+      const image = getProjectImage(project);
+
+      if (!title || !id || !image.src) {
+        return null;
+      }
+
+      return {
+        href: `projects.html#${id}`,
+        title,
+        image: image.src,
+        imageAlt: image.alt,
+        imageClass: image.className,
+      };
+    })
+    .filter(Boolean);
+
+const populateCarouselFromProjects = async () => {
+  if (!slideTrack || !window.DOMParser || window.location.protocol === "file:") {
+    return;
+  }
+
+  try {
+    const response = await fetch("projects.html", { cache: "no-cache" });
+
+    if (!response.ok) {
+      return;
+    }
+
+    const html = await response.text();
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const projects = getProjectsFromDocument(doc);
+
+    if (projects.length > 0) {
+      slideTrack.replaceChildren(...projects.map(createProjectCard));
+    }
+  } catch (error) {
+    // Keep the static carousel cards if projects.html cannot be read locally.
+  }
+};
+
+const initializeCarousel = () => {
+  const originalSlides = Array.from(slideTrack.querySelectorAll(".project-card"));
+
+  if (!slideTrack || !slider || originalSlides.length === 0 || !prevButton || !nextButton) {
+    return;
+  }
+
+  dotsContainer?.replaceChildren();
+
   const slideCount = originalSlides.length;
   let trackIndex = slideCount;
 
@@ -112,6 +211,10 @@ if (slideTrack && slider && originalSlides.length > 0 && prevButton && nextButto
 
   centerActiveSlide();
   requestAnimationFrame(centerActiveSlide);
+};
+
+if (slideTrack && slider && prevButton && nextButton) {
+  populateCarouselFromProjects().finally(initializeCarousel);
 }
 
 document.querySelectorAll(".project-sidebar a[href^='#']").forEach((link) => {

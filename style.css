@@ -695,6 +695,10 @@ a.project-info-card:hover {
     gap: 18px;
 }
 
+.components-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .data-results-card {
     grid-column: span 2;
 }

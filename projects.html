@@ -53,10 +53,10 @@
               <p>A neurosurgical bone removal device designed to reduce procedural time while protecting underlying tissue.</p>
             </a>
 
-            <a class="project-info-card project-switch-card" href="#printed-prototype" data-project-id="printed-prototype">
-              <img src="assets/project2.jpg" alt="3D Printed Prototype">
-              <h3>3D Printed Prototype</h3>
-              <p>A physical prototype developed through CAD, fabrication, and hands-on iteration.</p>
+            <a class="project-info-card project-switch-card" href="#rehab-device" data-project-id="rehab-device">
+              <img src="assets/rehab-prototype.jpg" alt="Rehab Motion Tracker prototype">
+              <h3>Rehab Motion Tracker</h3>
+              <p>A wearable rehabilitation prototype built around motion sensing, embedded control, and compact packaging.</p>
             </a>
 
             <a class="project-info-card project-switch-card" href="#embedded-system" data-project-id="embedded-system">
@@ -181,10 +181,10 @@
         <div class="other-projects" id="other-projects">
           <p class="eyebrow">More Projects</p>
           <div class="project-card-grid">
-            <a class="project-info-card" href="#printed-prototype" data-project-id="printed-prototype">
-              <img src="assets/project2.jpg" alt="3D Printed Prototype">
-              <h3>3D Printed Prototype</h3>
-              <p>A physical prototype developed through CAD, fabrication, and hands-on iteration.</p>
+            <a class="project-info-card" href="#rehab-device" data-project-id="rehab-device">
+              <img src="assets/rehab-prototype.jpg" alt="Rehab Motion Tracker prototype">
+              <h3>Rehab Motion Tracker</h3>
+              <p>A compact rehab device prototype combining sensing, microcontroller control, power, and enclosure integration.</p>
             </a>
 
             <a class="project-info-card" href="#embedded-system" data-project-id="embedded-system">
@@ -203,14 +203,14 @@
       </div>
     </section>
 
-    <section class="section project-detail-page" id="printed-prototype">
-      <aside class="project-sidebar" aria-label="3D Printed Prototype sections">
-        <a href="#printed-overview">Overview</a>
-        <a href="#printed-design">CAD &amp; Design</a>
-        <a href="#printed-results">Results</a>
-        <a href="#printed-methodology">Methodology</a>
-        <a href="#printed-analysis">Analysis</a>
-        <a href="#printed-gallery">Gallery</a>
+    <section class="section project-detail-page" id="rehab-device">
+      <aside class="project-sidebar" aria-label="Rehab Motion Tracker sections">
+        <a href="#rehab-overview">Overview</a>
+        <a href="#rehab-components">Components</a>
+        <a href="#rehab-prototype">Prototype</a>
+        <a href="#rehab-methodology">Methodology</a>
+        <a href="#rehab-analysis">Analysis</a>
+        <a href="#rehab-gallery">Gallery</a>
         <a href="#project-selector">Other Projects</a>
       </aside>
 
@@ -218,70 +218,93 @@
         <div class="project-heading-row">
           <div>
             <p class="eyebrow">Detailed Project</p>
-            <h2>3D Printed Prototype</h2>
-            <p>A physical prototype developed through CAD, fabrication, and hands-on iteration.</p>
+            <h2>Rehab Motion Tracker</h2>
+            <p>A compact rehabilitation device prototype for capturing movement data through embedded sensing and a custom electronics package.</p>
           </div>
           <a class="secondary-button" href="#project-selector">View All Projects</a>
         </div>
 
         <div class="metrics-strip" aria-label="Key metrics">
-          <div><span>Focus</span><strong>Fabrication</strong></div>
-          <div><span>Workflow</span><strong>CAD to print</strong></div>
-          <div><span>Validation</span><strong>Hands-on fit</strong></div>
-          <div><span>Status</span><strong>Prototype</strong></div>
+          <div><span>Focus</span><strong>Motion tracking</strong></div>
+          <div><span>Controller</span><strong>XIAO ESP32-C3</strong></div>
+          <div><span>Sensor</span><strong>BNO055 IMU</strong></div>
+          <div><span>Status</span><strong>Integrated prototype</strong></div>
         </div>
 
-        <div class="project-showcase" id="printed-overview">
+        <div class="project-showcase" id="rehab-overview">
           <div>
             <p class="eyebrow">Overview</p>
-            <h3>A prototype built to turn digital design choices into physical feedback.</h3>
-            <p>The project used iterative CAD modeling and additive manufacturing to evaluate form, fit, and build constraints before committing to a final direction.</p>
+            <h3>An embedded rehabilitation concept for tracking motion in a compact wearable package.</h3>
+            <p>The Rehab Motion Tracker combines a microcontroller, inertial motion sensor, rechargeable battery, and compact enclosure to explore how movement data can support rehabilitation-focused feedback and evaluation.</p>
           </div>
-          <img src="assets/project2.jpg" alt="3D Printed Prototype">
+          <img src="assets/rehab-prototype.jpg" alt="Rehab Motion Tracker prototype assembly">
         </div>
 
-        <div class="project-card-grid">
-          <article class="project-info-card" id="printed-design">
-            <img src="assets/project2.jpg" alt="3D printed prototype detail">
-            <p class="eyebrow">CAD &amp; Design</p>
-            <h3>Modeled for manufacturability and fast iteration.</h3>
-            <p>Geometry, tolerances, and part features were refined around printability, assembly behavior, and practical handling.</p>
+        <div class="project-card-grid components-grid" id="rehab-components">
+          <article class="project-info-card">
+            <img src="assets/rehab-microcontroller.jpg" alt="Seeed Studio XIAO ESP32-C3 microcontroller">
+            <p class="eyebrow">Component</p>
+            <h3>Microcontroller</h3>
+            <p>Seeed Studio XIAO ESP32-C3 used as the compact control board for reading sensor data and supporting wireless-capable embedded development.</p>
           </article>
 
-          <article class="project-info-card" id="printed-results">
-            <img src="assets/project2.jpg" alt="3D printed prototype result">
-            <p class="eyebrow">Results</p>
-            <h3>Physical testing clarified the next design moves.</h3>
-            <p>The printed model made scale, ergonomics, and interface issues easier to evaluate than CAD alone.</p>
+          <article class="project-info-card">
+            <img src="assets/rehab-imu-sensor.jpg" alt="BNO055 inertial measurement unit">
+            <p class="eyebrow">Component</p>
+            <h3>9-Axis IMU</h3>
+            <p>BNO055 absolute orientation sensor selected to capture movement behavior through accelerometer, gyroscope, and orientation data.</p>
+          </article>
+
+          <article class="project-info-card">
+            <img src="assets/rehab-battery.jpg" alt="3.7V lithium polymer battery">
+            <p class="eyebrow">Component</p>
+            <h3>Rechargeable Battery</h3>
+            <p>3.7V lithium polymer battery used to keep the prototype portable and support testing without a tethered power supply.</p>
+          </article>
+
+          <article class="project-info-card">
+            <img src="assets/rehab-usbc-board.jpg" alt="USB-C charging board">
+            <p class="eyebrow">Component</p>
+            <h3>USB-C Power Board</h3>
+            <p>Small USB-C board included for compact power access and charging integration inside the electronics package.</p>
           </article>
         </div>
 
-        <div class="project-process" id="printed-methodology">
+        <div class="project-showcase compact-showcase" id="rehab-prototype">
+          <div>
+            <p class="eyebrow">Prototype</p>
+            <h3>Integrated electronics inside a compact enclosure.</h3>
+            <p>The assembled prototype brings the sensor, controller, battery, wiring, and charging hardware together in a small housing. This build helps evaluate component placement, wiring clearance, portability, and the next design changes needed for a more polished wearable device.</p>
+          </div>
+          <img src="assets/rehab-prototype.jpg" alt="Assembled Rehab Motion Tracker prototype inside enclosure">
+        </div>
+
+        <div class="project-process" id="rehab-methodology">
           <p class="eyebrow">Methodology</p>
           <div class="process-steps">
-            <article><span>01</span><h3>Model</h3><p>Built the initial geometry around the intended function and envelope.</p></article>
-            <article><span>02</span><h3>Prepare</h3><p>Adjusted the design for slicing, print orientation, and material behavior.</p></article>
-            <article><span>03</span><h3>Print</h3><p>Fabricated the prototype for hands-on inspection and assembly feedback.</p></article>
-            <article><span>04</span><h3>Refine</h3><p>Used physical observations to identify changes for the next version.</p></article>
+            <article><span>01</span><h3>Select</h3><p>Chose compact components that could support motion sensing, processing, and portable power.</p></article>
+            <article><span>02</span><h3>Integrate</h3><p>Arranged the microcontroller, IMU, power board, and battery inside a small enclosure.</p></article>
+            <article><span>03</span><h3>Wire</h3><p>Connected power and sensor lines while keeping the layout compact enough for wearable testing.</p></article>
+            <article><span>04</span><h3>Refine</h3><p>Used the assembled build to evaluate packaging constraints and identify improvements for the next version.</p></article>
           </div>
         </div>
 
-        <div class="project-showcase compact-showcase" id="printed-analysis">
+        <div class="project-showcase compact-showcase" id="rehab-analysis">
           <div>
             <p class="eyebrow">Analysis</p>
-            <h3>The prototype exposed practical constraints early.</h3>
-            <p>Building a physical version helped reveal how the part behaved at real scale, where clearances mattered, and where the model needed simplification.</p>
+            <h3>Packaging the electronics made the design constraints visible.</h3>
+            <p>The build showed how quickly wiring, battery placement, board orientation, and enclosure volume affect usability. The next iteration can improve strain relief, board mounting, access to charging, and overall enclosure fit.</p>
           </div>
-          <img src="assets/project2.jpg" alt="3D printed prototype analysis">
+          <img src="assets/rehab-prototype.jpg" alt="Rehab Motion Tracker electronics layout">
         </div>
 
-        <div class="project-gallery" id="printed-gallery">
+        <div class="project-gallery" id="rehab-gallery">
           <p class="eyebrow">Gallery</p>
           <div>
-            <img src="assets/project2.jpg" alt="3D Printed Prototype">
-            <img src="assets/project2.jpg" alt="3D Printed Prototype alternate view">
-            <img src="assets/project2.jpg" alt="3D Printed Prototype detail view">
-            <img src="assets/project2.jpg" alt="3D Printed Prototype final view">
+            <img src="assets/rehab-microcontroller.jpg" alt="Seeed Studio XIAO ESP32-C3 board">
+            <img src="assets/rehab-imu-sensor.jpg" alt="BNO055 IMU component">
+            <img src="assets/rehab-battery.jpg" alt="Rechargeable battery component">
+            <img src="assets/rehab-prototype.jpg" alt="Completed rehab device prototype">
           </div>
         </div>
       </div>

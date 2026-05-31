@@ -827,6 +827,267 @@ a.project-info-card:hover {
     grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.75fr);
 }
 
+.reform-project {
+    display: block;
+    background-color: #172326;
+    color: #f7f8f5;
+    max-width: none;
+    padding-top: 0;
+    padding-bottom: 72px;
+}
+
+.reform-project > .project-sidebar,
+.reform-project > .project-workspace {
+    display: none;
+}
+
+.reform-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reform-hero {
+    position: relative;
+    min-height: 620px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: #0f181a;
+}
+
+.reform-hero > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.reform-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(23, 35, 38, 0.94), rgba(23, 35, 38, 0.62) 44%, rgba(23, 35, 38, 0.18));
+}
+
+.reform-hero-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 740px;
+    padding: clamp(32px, 6vw, 72px);
+}
+
+.reform-kicker {
+    color: #caa11c;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.reform-hero h2,
+.reform-section-heading h3 {
+    color: #ffffff;
+    letter-spacing: 0;
+}
+
+.reform-hero h2 {
+    font-size: clamp(3rem, 7vw, 6.7rem);
+    line-height: 0.92;
+    margin-bottom: 22px;
+}
+
+.reform-hero p:not(.reform-kicker),
+.reform-section p,
+.reform-muted {
+    color: #d9dfdc;
+    line-height: 1.65;
+}
+
+.reform-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.reform-actions a {
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    padding: 12px 16px;
+    text-transform: uppercase;
+}
+
+.reform-actions a:first-child {
+    background-color: #caa11c;
+    border-color: #caa11c;
+    color: #172326;
+}
+
+.reform-actions a:hover {
+    background-color: #d8b744;
+    border-color: #d8b744;
+    color: #172326;
+    transform: translateY(-2px);
+}
+
+.reform-section {
+    padding: 76px 0 0;
+}
+
+.reform-section-heading {
+    max-width: 780px;
+    margin-bottom: 28px;
+}
+
+.reform-section-heading h3 {
+    font-size: clamp(2rem, 4vw, 3.6rem);
+    line-height: 1.05;
+}
+
+.reform-overview-grid,
+.reform-card-grid,
+.reform-component-grid,
+.reform-result-grid,
+.reform-timeline {
+    display: grid;
+    gap: 18px;
+}
+
+.reform-overview-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reform-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reform-component-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.reform-overview-grid article,
+.reform-card-grid article,
+.reform-component-grid article,
+.reform-result-grid article,
+.reform-timeline article,
+.reform-media-grid figure,
+.reform-two-column,
+.reform-architecture-grid {
+    background-color: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 22px;
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.reform-overview-grid article:hover,
+.reform-card-grid article:hover,
+.reform-component-grid article:hover,
+.reform-result-grid article:hover,
+.reform-timeline article:hover,
+.reform-media-grid figure:hover {
+    background-color: rgba(255, 255, 255, 0.065);
+    border-color: rgba(202, 161, 28, 0.45);
+    transform: translateY(-3px);
+}
+
+.reform-overview-grid span,
+.reform-result-grid strong,
+.reform-timeline span {
+    color: #caa11c;
+    display: block;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.reform-card-grid h4,
+.reform-component-grid h4,
+.reform-timeline h4 {
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.reform-architecture-grid,
+.reform-two-column {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+    gap: 22px;
+    align-items: center;
+}
+
+.reform-block-diagram {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.reform-block-diagram span {
+    position: relative;
+    min-height: 118px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(202, 161, 28, 0.45);
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 900;
+    padding: 16px;
+    text-align: center;
+}
+
+.reform-block-diagram span:not(:last-child)::after {
+    content: ">";
+    position: absolute;
+    right: -12px;
+    color: #caa11c;
+}
+
+.reform-media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.reform-media-grid figcaption {
+    color: #ffffff;
+    font-weight: 900;
+    margin-top: 12px;
+}
+
+.reform-media-contain,
+.reform-component-grid img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.reform-component-grid img {
+    aspect-ratio: 1 / 1;
+    margin-bottom: 14px;
+}
+
+.reform-result-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.reform-result-grid span {
+    color: #d9dfdc;
+}
+
+.reform-timeline {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .experience-summary {
     color: var(--TextSecondary);
     font-size: clamp(1rem, 1.45vw, 1.24rem);
@@ -1004,8 +1265,36 @@ a.project-info-card:hover {
     .project-contributors > div,
     .experience-grid,
     .experience-grid.three-column,
-    .experience-item {
+    .experience-item,
+    .reform-overview-grid,
+    .reform-card-grid,
+    .reform-component-grid,
+    .reform-architecture-grid,
+    .reform-block-diagram,
+    .reform-media-grid,
+    .reform-two-column,
+    .reform-result-grid,
+    .reform-timeline {
         grid-template-columns: 1fr;
+    }
+
+    .reform-project {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .reform-hero {
+        min-height: 560px;
+    }
+
+    .reform-section {
+        padding-top: 54px;
+    }
+
+    .reform-block-diagram span:not(:last-child)::after {
+        content: "v";
+        right: auto;
+        bottom: -15px;
     }
 
     .project-sidebar {

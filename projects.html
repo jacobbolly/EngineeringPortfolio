@@ -54,9 +54,9 @@
             </a>
 
             <a class="project-info-card project-switch-card" href="#rehab-device" data-project-id="rehab-device">
-              <img src="assets/rehab-prototype.jpg" alt="Rehab Motion Tracker prototype">
-              <h3>Rehab Motion Tracker</h3>
-              <p>A wearable rehabilitation prototype built around motion sensing, embedded control, and compact packaging.</p>
+              <img src="assets/ReformOverview%20image.png" alt="ReForm wearable rehabilitation motion tracker">
+              <h3>ReForm</h3>
+              <p>A wearable rehabilitation motion tracker built around embedded sensing, rep counting, and future wireless feedback.</p>
             </a>
 
           </div>
@@ -171,9 +171,9 @@
           <p class="eyebrow">More Projects</p>
           <div class="project-card-grid">
             <a class="project-info-card" href="#rehab-device" data-project-id="rehab-device">
-              <img src="assets/rehab-prototype.jpg" alt="Rehab Motion Tracker prototype">
-              <h3>Rehab Motion Tracker</h3>
-              <p>A compact rehab device prototype combining sensing, microcontroller control, power, and enclosure integration.</p>
+              <img src="assets/ReformOverview%20image.png" alt="ReForm wearable rehabilitation motion tracker">
+              <h3>ReForm</h3>
+              <p>A compact wearable rehabilitation tracker combining motion sensing, embedded control, power, and enclosure integration.</p>
             </a>
 
           </div>
@@ -181,7 +181,139 @@
       </div>
     </section>
 
-    <section class="section project-detail-page" id="rehab-device">
+    <section class="section project-detail-page reform-project" id="rehab-device">
+      <div class="reform-container">
+        <section class="reform-hero" data-carousel-project data-project-id="rehab-device" data-project-image="assets/ReformOverview%20image.png">
+          <img src="assets/ReformOverview%20image.png" alt="ReForm wearable rehabilitation motion tracker overview">
+          <div class="reform-hero-copy">
+            <p class="reform-kicker">Wearable Rehabilitation Technology</p>
+            <h2>ReForm: Wearable Rehabilitation Motion Tracker</h2>
+            <p>A compact wearable prototype that tracks rehabilitation movement, estimates range of motion, counts repetitions, and supports future wireless recovery feedback.</p>
+            <div class="reform-actions">
+              <a href="#reform-cad">View CAD</a>
+              <a href="https://github.com/jacobbolly" target="_blank" rel="noopener noreferrer">View Source Code</a>
+              <a href="#reform-wiring">View Wiring Diagram</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="reform-section" id="reform-overview">
+          <div class="reform-section-heading">
+            <p class="reform-kicker">Project Overview</p>
+            <h3>Objective movement feedback for safer rehabilitation.</h3>
+          </div>
+          <div class="reform-overview-grid">
+            <article><span>Problem Statement</span><p>Rehabilitation exercises are often performed without real-time objective feedback, making motion depth, repetitions, and form difficult to evaluate consistently.</p></article>
+            <article><span>Why It Was Created</span><p>The project was inspired by recurring knee rehabilitation setbacks and the need for a portable tool that can make movement quality easier to measure outside of a clinic.</p></article>
+            <article><span>Solution Summary</span><p>ReForm combines an ESP32-C3, BNO055 IMU, rechargeable power system, and wearable enclosure to capture motion data and prepare it for dashboard-based feedback.</p></article>
+          </div>
+        </section>
+
+        <section class="reform-section" id="reform-features">
+          <div class="reform-section-heading">
+            <p class="reform-kicker">Key Features</p>
+            <h3>Built around the data patients and clinicians need.</h3>
+          </div>
+          <div class="reform-card-grid">
+            <article><h4>Motion Tracking</h4><p>Captures orientation and movement signals from a 9-axis IMU.</p></article>
+            <article><h4>Rep Counting</h4><p>Identifies repeated exercise cycles for measurable session feedback.</p></article>
+            <article><h4>Form Detection</h4><p>Supports future thresholds for depth, speed, and motion quality.</p></article>
+            <article><h4>Wireless Dashboard</h4><p>Designed for dashboard communication and live data visualization.</p></article>
+            <article><h4>Rechargeable Battery</h4><p>Portable power system for untethered rehab movement testing.</p></article>
+            <article><h4>Wearable Design</h4><p>Compact enclosure architecture for body-mounted use.</p></article>
+          </div>
+        </section>
+
+        <section class="reform-section" id="reform-architecture">
+          <div class="reform-section-heading">
+            <p class="reform-kicker">System Architecture</p>
+            <h3>Sensor input, embedded processing, and dashboard output.</h3>
+          </div>
+          <div class="reform-architecture-grid">
+            <div class="reform-block-diagram" aria-label="System block diagram">
+              <span>BNO055 IMU</span><span>XIAO ESP32-C3</span><span>Motion Algorithm</span><span>Wireless Dashboard</span>
+            </div>
+            <img class="reform-media-contain" src="assets/rehab-prototype.jpg" alt="ReForm hardware architecture prototype">
+          </div>
+          <p class="reform-muted">The architecture separates sensing, processing, power, and communication so each subsystem can be tested and improved independently.</p>
+        </section>
+
+        <section class="reform-section" id="reform-components">
+          <div class="reform-section-heading">
+            <p class="reform-kicker">Hardware Components</p>
+            <h3>Compact electronics selected for wearable deployment.</h3>
+          </div>
+          <div class="reform-component-grid">
+            <article><img src="assets/rehab-microcontroller.jpg" alt="XIAO ESP32-C3"><h4>XIAO ESP32-C3</h4></article>
+            <article><img src="assets/rehab-imu-sensor.jpg" alt="BNO055 IMU"><h4>BNO055</h4></article>
+            <article><img src="assets/rehab-usbc-board.jpg" alt="LX-LBES charger board"><h4>LX-LBES Charger</h4></article>
+            <article><img src="assets/rehab-battery.jpg" alt="PL502248 battery"><h4>PL502248 Battery</h4></article>
+            <article><img src="assets/WiringDiagram.png" alt="Power switch detail"><h4>Power Switch</h4></article>
+          </div>
+        </section>
+
+        <section class="reform-section" id="reform-cad">
+          <div class="reform-section-heading">
+            <p class="reform-kicker">CAD Design</p>
+            <h3>Mechanical package for the electronics and wearable form factor.</h3>
+          </div>
+          <div class="reform-media-grid">
+            <figure><img class="reform-media-contain" src="assets/reform.png" alt="ReForm exploded CAD view"><figcaption>Exploded view</figcaption></figure>
+            <figure><img class="reform-media-contain" src="assets/ReformOverview%20image.png" alt="ReForm enclosure render"><figcaption>Enclosure render</figcaption></figure>
+            <figure><img class="reform-media-contain" src="assets/reform.png" alt="ReForm mechanical drawing"><figcaption>Mechanical drawing</figcaption></figure>
+          </div>
+        </section>
+
+        <section class="reform-section" id="reform-wiring">
+          <div class="reform-section-heading">
+            <p class="reform-kicker">Wiring &amp; Electronics</p>
+            <h3>Power, sensing, and control wiring for the prototype.</h3>
+          </div>
+          <div class="reform-two-column">
+            <img class="reform-media-contain" src="assets/WiringDiagramPortfolio.png" alt="Professional wiring schematic for ReForm">
+            <p>The electronics connect the ESP32-C3 microcontroller to the BNO055 IMU, rechargeable battery, charging board, and switch. The wiring layout was organized to support compact packaging while keeping charging and debugging access practical.</p>
+          </div>
+        </section>
+
+        <section class="reform-section" id="reform-software">
+          <div class="reform-section-heading">
+            <p class="reform-kicker">Software</p>
+            <h3>Motion logic designed for rehabilitation feedback.</h3>
+          </div>
+          <div class="reform-card-grid">
+            <article><h4>Motion Tracking Algorithm</h4><p>Reads IMU orientation and motion signals to estimate exercise movement patterns.</p></article>
+            <article><h4>Rep Counting Logic</h4><p>Detects repeated motion cycles from threshold crossings and state changes.</p></article>
+            <article><h4>Dashboard Communication</h4><p>Structures movement metrics for display in a recovery-focused dashboard.</p></article>
+            <article><h4>Future Bluetooth Support</h4><p>BLE communication is planned for mobile app pairing and session transfer.</p></article>
+          </div>
+        </section>
+
+        <section class="reform-section" id="reform-results">
+          <div class="reform-section-heading">
+            <p class="reform-kicker">Results</p>
+            <h3>Validated prototype functions and next performance targets.</h3>
+          </div>
+          <div class="reform-result-grid">
+            <article><strong>Rep Counting</strong><span>Prototype logic established</span></article>
+            <article><strong>Range of Motion</strong><span>IMU-based estimation path</span></article>
+            <article><strong>Form Detection</strong><span>Threshold framework planned</span></article>
+            <article><strong>Wireless Connectivity</strong><span>ESP32-C3 ready for BLE</span></article>
+          </div>
+        </section>
+
+        <section class="reform-section" id="reform-future">
+          <div class="reform-section-heading">
+            <p class="reform-kicker">Future Development</p>
+            <h3>Roadmap toward a more complete rehabilitation platform.</h3>
+          </div>
+          <div class="reform-timeline">
+            <article><span>01</span><h4>Bluetooth App</h4><p>Pair the wearable with a mobile interface.</p></article>
+            <article><span>02</span><h4>Session Storage</h4><p>Save exercise history for review over time.</p></article>
+            <article><span>03</span><h4>Analytics</h4><p>Track trends in depth, consistency, and form.</p></article>
+            <article><span>04</span><h4>Clinical Reporting</h4><p>Export meaningful progress summaries.</p></article>
+          </div>
+        </section>
+      </div>
       <aside class="project-sidebar" aria-label="Rehab Motion Tracker sections">
         <a href="#rehab-overview">Overview</a>
         <a href="#rehab-components">Components</a>

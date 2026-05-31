@@ -855,6 +855,7 @@ a.project-info-card:hover {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     background-color: #0f181a;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.32);
 }
 
 .reform-hero > img {
@@ -869,14 +870,19 @@ a.project-info-card:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(23, 35, 38, 0.94), rgba(23, 35, 38, 0.62) 44%, rgba(23, 35, 38, 0.18));
+    background: linear-gradient(0deg, rgba(23, 35, 38, 0.95), rgba(23, 35, 38, 0.52) 38%, rgba(23, 35, 38, 0.08) 72%);
 }
 
 .reform-hero-copy {
     position: relative;
     z-index: 1;
-    max-width: 740px;
-    padding: clamp(32px, 6vw, 72px);
+    max-width: 680px;
+    margin: clamp(18px, 3vw, 36px);
+    padding: clamp(24px, 4vw, 44px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    background-color: rgba(23, 35, 38, 0.78);
+    backdrop-filter: blur(8px);
 }
 
 .reform-kicker {
@@ -898,6 +904,18 @@ a.project-info-card:hover {
     font-size: clamp(3rem, 7vw, 6.7rem);
     line-height: 0.92;
     margin-bottom: 22px;
+}
+
+.reform-project:not(.osteox-project) .reform-hero-copy {
+    max-width: 560px;
+}
+
+.reform-project:not(.osteox-project) .reform-hero h2 {
+    font-size: clamp(2.5rem, 5.4vw, 5.2rem);
+}
+
+.osteox-hero > img {
+    object-position: center center;
 }
 
 .reform-hero p:not(.reform-kicker),
@@ -1082,6 +1100,22 @@ a.project-info-card:hover {
 
 .reform-result-grid span {
     color: #d9dfdc;
+}
+
+.osteox-data-panel {
+    align-items: stretch;
+}
+
+.osteox-data-panel .data-visuals {
+    display: grid;
+    gap: 18px;
+}
+
+.osteox-data-panel .data-visuals img {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 14px;
 }
 
 .reform-timeline {

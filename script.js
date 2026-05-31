@@ -68,16 +68,20 @@ const getProjectImage = (project) => {
   };
 };
 
-const getProjectsFromDocument = (doc) =>
-  Array.from(doc.querySelectorAll("[data-carousel-project], .other-projects .project-info-card"))
+const getProjectsFromDocument = (doc) => {
+  const seenProjectIds = new Set();
+
+  return Array.from(doc.querySelectorAll("[data-carousel-project], .other-projects .project-info-card"))
     .map((project) => {
       const title = project.querySelector("h2, h3")?.textContent.trim();
       const id = project.dataset.projectId || project.id;
       const image = getProjectImage(project);
 
-      if (!title || !id || !image.src) {
+      if (!title || !id || !image.src || seenProjectIds.has(id)) {
         return null;
       }
+
+      seenProjectIds.add(id);
 
       return {
         href: `projects.html#${id}`,
@@ -88,6 +92,7 @@ const getProjectsFromDocument = (doc) =>
       };
     })
     .filter(Boolean);
+};
 
 const populateCarouselFromProjects = async () => {
   if (!slideTrack || !window.DOMParser || window.location.protocol === "file:") {

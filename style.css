@@ -848,9 +848,10 @@ a.project-info-card:hover {
 
 .reform-hero {
     position: relative;
-    min-height: 620px;
-    display: flex;
-    align-items: flex-end;
+    min-height: 750px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -859,30 +860,39 @@ a.project-info-card:hover {
 }
 
 .reform-hero > img {
-    position: absolute;
-    inset: 0;
+    position: relative;
+    z-index: 0;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: stretch;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: 70% center;
 }
 
 .reform-hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(0deg, rgba(23, 35, 38, 0.95), rgba(23, 35, 38, 0.52) 38%, rgba(23, 35, 38, 0.08) 72%);
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        rgba(23, 35, 38, 0.90) 0%,
+        rgba(23, 35, 38, 0.75) 35%,
+        rgba(23, 35, 38, 0.20) 65%,
+        rgba(23, 35, 38, 0.00) 100%
+    );
 }
 
 .reform-hero-copy {
     position: relative;
-    z-index: 1;
-    max-width: 680px;
-    margin: clamp(18px, 3vw, 36px);
-    padding: clamp(24px, 4vw, 44px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 8px;
-    background-color: rgba(23, 35, 38, 0.78);
-    backdrop-filter: blur(8px);
+    z-index: 2;
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 500px;
+    padding: clamp(28px, 4vw, 54px);
 }
 
 .reform-kicker {
@@ -901,21 +911,17 @@ a.project-info-card:hover {
 }
 
 .reform-hero h2 {
-    font-size: clamp(3rem, 7vw, 6.7rem);
+    font-size: clamp(2.7rem, 4.9vw, 4.9rem);
     line-height: 0.92;
     margin-bottom: 22px;
 }
 
-.reform-project:not(.osteox-project) .reform-hero-copy {
-    max-width: 560px;
-}
-
 .reform-project:not(.osteox-project) .reform-hero h2 {
-    font-size: clamp(2.5rem, 5.4vw, 5.2rem);
+    font-size: clamp(2.5rem, 4.5vw, 4.7rem);
 }
 
 .osteox-hero > img {
-    object-position: center center;
+    object-position: 70% center;
 }
 
 .reform-hero p:not(.reform-kicker),
@@ -1102,20 +1108,65 @@ a.project-info-card:hover {
     color: #d9dfdc;
 }
 
-.osteox-data-panel {
-    align-items: stretch;
-}
-
-.osteox-data-panel .data-visuals {
+.results-grid {
     display: grid;
-    gap: 18px;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+    gap: 1.5rem;
+    align-items: start;
 }
 
-.osteox-data-panel .data-visuals img {
-    width: 100%;
+.chart-stack {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.chart-card {
     background-color: #ffffff;
-    border-radius: 8px;
-    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 14px;
+    padding: 1.25rem;
+    margin: 0;
+}
+
+.chart-card img {
+    display: block;
+    width: 100%;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    align-content: start;
+}
+
+.kpi-card {
+    min-height: 140px;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    background-color: rgba(255, 255, 255, 0.045);
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.kpi-card:hover {
+    background-color: rgba(255, 255, 255, 0.065);
+    border-color: rgba(202, 161, 28, 0.45);
+    transform: translateY(-3px);
+}
+
+.kpi-card strong {
+    color: #caa11c;
+    display: block;
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+.kpi-card span {
+    color: #d9dfdc;
+    display: block;
+    line-height: 1.45;
 }
 
 .reform-timeline {
@@ -1308,8 +1359,13 @@ a.project-info-card:hover {
     .reform-media-grid,
     .reform-two-column,
     .reform-result-grid,
+    .results-grid,
     .reform-timeline {
         grid-template-columns: 1fr;
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .reform-project {
@@ -1318,7 +1374,34 @@ a.project-info-card:hover {
     }
 
     .reform-hero {
-        min-height: 560px;
+        min-height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .reform-hero > img {
+        grid-column: 1;
+        grid-row: 1;
+        height: auto;
+        min-height: 320px;
+        object-fit: contain;
+        object-position: 70% center;
+    }
+
+    .reform-hero::after {
+        background: linear-gradient(180deg, rgba(23, 35, 38, 0.05) 0%, rgba(23, 35, 38, 0.42) 48%, rgba(23, 35, 38, 0.94) 100%);
+    }
+
+    .reform-hero-copy {
+        grid-column: 1;
+        grid-row: 2;
+        max-width: 100%;
+        padding: 28px;
+    }
+
+    .reform-hero h2,
+    .reform-project:not(.osteox-project) .reform-hero h2 {
+        font-size: clamp(2.2rem, 9vw, 3.6rem);
     }
 
     .reform-section {
@@ -1373,5 +1456,11 @@ a.project-info-card:hover {
         width: 112px;
         height: 112px;
         margin: 24px 0 0 auto;
+    }
+}
+
+@media(max-width: 560px) {
+    .kpi-grid {
+        grid-template-columns: 1fr;
     }
 }

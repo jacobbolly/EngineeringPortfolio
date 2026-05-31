@@ -835,6 +835,13 @@ a.project-info-card:hover {
     max-width: 840px;
 }
 
+.resume-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+}
+
 .experience-section {
     padding-top: 56px;
 }

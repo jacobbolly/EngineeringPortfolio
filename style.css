@@ -1107,8 +1107,7 @@ a.project-info-card:hover {
 
 .pdf-preview {
     width: 100%;
-    min-height: 330px;
-    aspect-ratio: 16 / 10;
+    height: clamp(220px, 22vw, 270px);
     background-color: #ffffff;
     border: 0;
     border-radius: 8px;

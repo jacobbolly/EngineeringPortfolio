@@ -994,7 +994,7 @@ a.project-info-card:hover {
 }
 
 .reform-component-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .reform-overview-grid article,
@@ -1098,6 +1098,51 @@ a.project-info-card:hover {
 .reform-component-grid img {
     aspect-ratio: 1 / 1;
     margin-bottom: 14px;
+}
+
+.pdf-preview-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-preview {
+    width: 100%;
+    min-height: 330px;
+    aspect-ratio: 16 / 10;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 8px;
+}
+
+.pdf-preview a {
+    color: #172326;
+    display: inline-flex;
+    font-weight: 800;
+    padding: 18px;
+}
+
+.pdf-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.pdf-actions a {
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    padding: 10px 14px;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.pdf-actions a:hover {
+    background-color: #caa11c;
+    border-color: #caa11c;
+    color: #11161a;
 }
 
 .reform-result-grid {

@@ -1219,6 +1219,78 @@ a.project-info-card:hover {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.comparison-table-wrap {
+    background-color: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #d9dfdc;
+}
+
+.comparison-table caption {
+    caption-side: bottom;
+    color: #d9dfdc;
+    font-size: 0.96rem;
+    line-height: 1.6;
+    padding: 18px 22px 22px;
+    text-align: left;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 18px 20px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.comparison-table thead th {
+    background-color: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.comparison-table tbody th {
+    color: #ffffff;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.comparison-table tbody tr {
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.065);
+}
+
+.comparison-table tbody tr:last-child th,
+.comparison-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.comparison-table .reform-highlight-row {
+    background-color: rgba(202, 161, 28, 0.12);
+    box-shadow: inset 4px 0 0 #caa11c;
+}
+
+.comparison-table .reform-highlight-row th,
+.comparison-table .reform-highlight-row td {
+    color: #ffffff;
+}
+
+.comparison-table .reform-highlight-row th {
+    color: #f0d36a;
+}
+
 .experience-summary {
     color: var(--TextSecondary);
     font-size: clamp(1rem, 1.45vw, 1.24rem);
@@ -1452,6 +1524,57 @@ a.project-info-card:hover {
 
     .reform-section {
         padding-top: 54px;
+    }
+
+    .comparison-table-wrap {
+        background-color: transparent;
+        border: 0;
+        overflow: visible;
+    }
+
+    .comparison-table,
+    .comparison-table thead,
+    .comparison-table tbody,
+    .comparison-table tr,
+    .comparison-table th,
+    .comparison-table td,
+    .comparison-table caption {
+        display: block;
+        width: 100%;
+    }
+
+    .comparison-table thead {
+        display: none;
+    }
+
+    .comparison-table tbody tr {
+        background-color: rgba(255, 255, 255, 0.045);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        margin-bottom: 16px;
+        overflow: hidden;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 14px 16px;
+        white-space: normal;
+    }
+
+    .comparison-table td::before {
+        color: #caa11c;
+        content: attr(data-label);
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+    }
+
+    .comparison-table caption {
+        padding: 4px 0 0;
     }
 
     .reform-block-diagram span:not(:last-child)::after {

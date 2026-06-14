@@ -1079,6 +1079,31 @@ a.project-info-card:hover {
     gap: 18px;
 }
 
+.reform-contributor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.reform-contributor-grid article {
+    background-color: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 22px;
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.reform-contributor-grid article:hover {
+    background-color: rgba(255, 255, 255, 0.065);
+    border-color: rgba(202, 161, 28, 0.45);
+    transform: translateY(-3px);
+}
+
+.reform-contributor-grid h4 {
+    color: #ffffff;
+    margin: 0;
+}
+
 .reform-media-grid figcaption {
     color: #ffffff;
     font-weight: 900;
@@ -1475,6 +1500,7 @@ a.project-info-card:hover {
     .reform-architecture-grid,
     .reform-block-diagram,
     .reform-media-grid,
+    .reform-contributor-grid,
     .reform-two-column,
     .reform-result-grid,
     .results-grid,
